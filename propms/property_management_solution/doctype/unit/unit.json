@@ -1,0 +1,255 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:unit_number-{##}",
+ "creation": "2024-11-14 15:35:33.953159",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "unit_number",
+  "name1",
+  "image",
+  "unit_owner",
+  "category",
+  "title_deed_number",
+  "type",
+  "bedroom",
+  "master_bedroom",
+  "common_bathroom",
+  "builtup_area",
+  "carpet_area",
+  "facing",
+  "num_of_parking",
+  "unit_assets",
+  "amenity_name",
+  "property_meter_reading",
+  "rent",
+  "security_deposit",
+  "smoking",
+  "finishing",
+  "furnishing",
+  "description",
+  "status",
+  "price_per_month_day",
+  "price_per_meter",
+  "payment_type",
+  "lft",
+  "rgt",
+  "is_group",
+  "old_parent",
+  "parent_unit"
+ ],
+ "fields": [
+  {
+   "fieldname": "unit_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Unit Number"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  },
+  {
+   "fieldname": "unit_owner",
+   "fieldtype": "Link",
+   "label": "Unit Owner",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "title_deed_number",
+   "fieldtype": "Data",
+   "label": "Title deed number"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Link",
+   "label": "Type",
+   "options": "Unit Type"
+  },
+  {
+   "fieldname": "bedroom",
+   "fieldtype": "Int",
+   "label": "Bedroom"
+  },
+  {
+   "fieldname": "master_bedroom",
+   "fieldtype": "Int",
+   "label": "Master Bedroom"
+  },
+  {
+   "fieldname": "common_bathroom",
+   "fieldtype": "Int",
+   "label": "Common Bathroom"
+  },
+  {
+   "fieldname": "builtup_area",
+   "fieldtype": "Float",
+   "label": "Builtup Area"
+  },
+  {
+   "fieldname": "carpet_area",
+   "fieldtype": "Float",
+   "label": "Carpet Area"
+  },
+  {
+   "fieldname": "facing",
+   "fieldtype": "Select",
+   "label": "Facing",
+   "options": "North\nNorth-East\nEast\nSouth-East\nWest\nNorth-West\nSouth-West\nSouth"
+  },
+  {
+   "fieldname": "num_of_parking",
+   "fieldtype": "Int",
+   "label": "Num Of Parking"
+  },
+  {
+   "fieldname": "unit_assets",
+   "fieldtype": "Table",
+   "label": "Unit Assets",
+   "options": "Unit Assets"
+  },
+  {
+   "fieldname": "rent",
+   "fieldtype": "Currency",
+   "label": "Rent"
+  },
+  {
+   "fieldname": "security_deposit",
+   "fieldtype": "Currency",
+   "label": "Security Deposit"
+  },
+  {
+   "fieldname": "finishing",
+   "fieldtype": "Select",
+   "label": "Finishing",
+   "options": "Fully Finished\nSemi Finished\nUnfinished"
+  },
+  {
+   "fieldname": "furnishing",
+   "fieldtype": "Select",
+   "label": "Furnishing",
+   "options": "Fully Furnished\nSemi Furnished\nUnfurnished"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "On Sale\nOn Lease\nOff Lease in 3 Months\nSold\nBooked\nManaged for customer"
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "label": "Old Parent",
+   "options": "Unit"
+  },
+  {
+   "fieldname": "parent_unit",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Parent Unit",
+   "options": "Unit"
+  },
+  {
+   "fieldname": "amenity_name",
+   "fieldtype": "Table",
+   "label": "Amenity Name",
+   "options": "Property Amenity"
+  },
+  {
+   "fieldname": "property_meter_reading",
+   "fieldtype": "Table",
+   "label": "Property Meter Reading",
+   "options": "Property Meter Reading"
+  },
+  {
+   "default": "0",
+   "fieldname": "smoking",
+   "fieldtype": "Check",
+   "label": "Smoking"
+  },
+  {
+   "fieldname": "price_per_month_day",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "price per month/day"
+  },
+  {
+   "fieldname": "price_per_meter",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "price per meter"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category",
+   "options": "Commercial\nResidential"
+  },
+  {
+   "fieldname": "payment_type",
+   "fieldtype": "Select",
+   "label": "Payment Type",
+   "options": "Cash\nInstallments\nCash or Installments"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-16 14:22:13.635260",
+ "modified_by": "Administrator",
+ "module": "Property Management Solution",
+ "name": "Unit",
+ "naming_rule": "Expression",
+ "nsm_parent_field": "parent_unit",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "All",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

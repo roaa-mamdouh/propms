@@ -1,0 +1,36 @@
+{
+ "actions": [],
+ "autoname": "format:amenity_name-{##}",
+ "creation": "2018-11-22 23:17:10.604222",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "amenity_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "amenity_name",
+   "fieldtype": "Select",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Amenity Name",
+   "options": "Balcony\nA\\C\nGarage\nKitchen appliances\nMaids Room\nPrivate Garden\nPrivate pool\nSecurity\nShared pool\nShared Gym\nShared Spa",
+   "sort_options": 1
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2024-11-14 17:03:51.997521",
+ "modified_by": "Administrator",
+ "module": "Property Management Solution",
+ "name": "Property Amenity",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,180 @@
+{
+ "actions": [],
+ "autoname": "format:unit_number-{##}",
+ "creation": "2024-11-14 14:04:27.283177",
+ "default_view": "List",
+ "doctype": "DocType",
+ "document_type": "Setup",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "unit_number",
+  "name1",
+  "photo",
+  "unit_owner",
+  "title_deed_number",
+  "type",
+  "bedroom",
+  "master_bedroom",
+  "common_bathroom",
+  "builtup_area",
+  "carpet_area",
+  "facing",
+  "no_of_parking",
+  "unit_assets",
+  "rent",
+  "security_deposit",
+  "smoking",
+  "furnished",
+  "description",
+  "status_active"
+ ],
+ "fields": [
+  {
+   "fieldname": "unit_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Unit Number"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Name"
+  },
+  {
+   "fieldname": "photo",
+   "fieldtype": "Attach Image",
+   "label": "Photo"
+  },
+  {
+   "fieldname": "unit_owner",
+   "fieldtype": "Link",
+   "label": "Unit Owner",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "title_deed_number",
+   "fieldtype": "Data",
+   "label": "Title deed number"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "Unit Type"
+  },
+  {
+   "fieldname": "bedroom",
+   "fieldtype": "Int",
+   "label": "Bedroom"
+  },
+  {
+   "fieldname": "master_bedroom",
+   "fieldtype": "Int",
+   "label": "Master bedroom"
+  },
+  {
+   "fieldname": "common_bathroom",
+   "fieldtype": "Int",
+   "label": "Common bathroom"
+  },
+  {
+   "fieldname": "builtup_area",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Builtup area"
+  },
+  {
+   "fieldname": "carpet_area",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Carpet area"
+  },
+  {
+   "fieldname": "facing",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Facing",
+   "options": "North\nNorth-East\nEast\nSouth-East\nWest\nNorth-West\nSouth-West\nSouth"
+  },
+  {
+   "fieldname": "no_of_parking",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "No of parking"
+  },
+  {
+   "fieldname": "unit_assets",
+   "fieldtype": "Table",
+   "label": "Unit Assets",
+   "options": "Unit Assets"
+  },
+  {
+   "fieldname": "rent",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rent"
+  },
+  {
+   "fieldname": "security_deposit",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Security Deposit"
+  },
+  {
+   "default": "0",
+   "fieldname": "smoking",
+   "fieldtype": "Check",
+   "label": "Smoking"
+  },
+  {
+   "default": "0",
+   "fieldname": "furnished",
+   "fieldtype": "Check",
+   "label": "Furnished"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "status_active",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status active",
+   "options": "Available\nBooked\nSale\nOn Lease\nOff Lease in 3 Months\nSold\nManaged for customer"
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-11-14 15:17:59.850072",
+ "modified_by": "Administrator",
+ "module": "Property Management Solution",
+ "name": "Inventory Unit",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
