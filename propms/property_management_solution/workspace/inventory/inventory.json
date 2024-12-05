@@ -1,0 +1,47 @@
+{
+ "charts": [
+  {
+   "chart_name": "Reservations",
+   "label": "Properties Status"
+  },
+  {
+   "chart_name": "Reservations 2",
+   "label": "Properties Status Pie"
+  },
+  {
+   "chart_name": "Reservations Donut",
+   "label": "Properties Status Donut"
+  }
+ ],
+ "content": "[{\"id\":\"8izK3CJx-T\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Drop Menu\",\"col\":12}},{\"id\":\"lcg7IFzVvw\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Properties Status Pie\",\"col\":12}},{\"id\":\"cQLSp79a95\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Properties Status Donut\",\"col\":12}},{\"id\":\"1TSmAkFkPW\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Properties Status\",\"col\":12}}]",
+ "creation": "2024-11-14 13:25:45.403621",
+ "custom_blocks": [
+  {
+   "custom_block_name": "Drop Menu",
+   "label": "Drop Menu"
+  }
+ ],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "organization",
+ "idx": 0,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "Inventory",
+ "links": [],
+ "modified": "2024-12-04 10:32:17.775865",
+ "modified_by": "Administrator",
+ "module": "Property Management Solution",
+ "name": "Inventory",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 1.0,
+ "shortcuts": [],
+ "title": "Inventory"
+}
