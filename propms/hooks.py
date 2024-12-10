@@ -209,6 +209,31 @@ scheduler_events = {
     "cron": {"00 12 * * *": ["propms.lease_invoice.leaseInvoiceAutoCreate"]},
 }
 
+fixtures = [
+    {"dt": "Client Script", "filters": [
+         [
+             "module", "=", "Property Management Solution"
+         ]
+ ]},
+     {"dt": "Server Script", "filters": [
+         [
+             "module", "=", "Property Management Solution"
+         ]
+ ]},
+    {"dt": "Custom HTML Block"},
+    {"dt": "Dashboard Chart", "filters": [
+         [
+             "module", "=", "Property Management Solution"
+         ]
+ ]},
+    {"dt": "Number Card", "filters": [
+         [
+             "module", "=", "Property Management Solution"
+         ]
+ ]}
+]
+    
+
 
 # doc_events = {
 # 	"*": {

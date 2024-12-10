@@ -12,9 +12,9 @@
  "field_order": [
   "identification_section",
   "name1",
-  "parent_property",
   "is_group",
   "category",
+  "tst",
   "column_break_2",
   "photo",
   "company",
@@ -63,7 +63,8 @@
   "attach",
   "latitude",
   "longitude",
-  "location"
+  "location",
+  "parent_property"
  ],
  "fields": [
   {
@@ -386,13 +387,19 @@
    "fieldname": "longitude",
    "fieldtype": "Data",
    "label": "Longitude"
+  },
+  {
+   "fieldname": "tst",
+   "fieldtype": "Datetime",
+   "in_filter": 1,
+   "label": "tst"
   }
  ],
  "icon": "octicon octicon-home",
  "image_field": "photo",
  "is_tree": 1,
  "links": [],
- "modified": "2024-12-01 13:13:32.252294",
+ "modified": "2024-12-05 14:26:39.344859",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Property",
