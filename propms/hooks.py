@@ -230,7 +230,8 @@ fixtures = [
          [
              "module", "=", "Property Management Solution"
          ]
- ]}
+ ]},
+   {"dt": "Custom HTML Block"} 
 ]
     
 
