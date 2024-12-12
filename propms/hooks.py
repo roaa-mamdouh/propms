@@ -231,7 +231,12 @@ fixtures = [
              "module", "=", "Property Management Solution"
          ]
  ]},
-   {"dt": "Custom HTML Block"} 
+   {"dt": "Custom HTML Block"},
+    {"dt": "Report", "filters": [
+         [
+             "module", "=", "Property Management Solution"
+         ]
+ ]}
 ]
     
 

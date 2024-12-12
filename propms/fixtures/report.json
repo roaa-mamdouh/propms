@@ -1,0 +1,753 @@
+[
+ {
+  "add_total_row": 1,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2018-12-20 13:30:28.461805",
+  "module": "Property Management Solution",
+  "name": "Security Attendance Report",
+  "prepared_report": 0,
+  "query": "SELECT  sa.owner as `Created by`,\n        sa.modified_by as `Approved by`,\n        upper(sa.shift_name) as `Shift`,\n        sa.shift_date as `Date:Date:`,\n        sad.guard_name as `Guard Name`,\n        sad.position as `Position`, \n        if(sad.status = 'Present', 1, 0) as `Present:Int:`,\n        if(sad.status = 'Absent ', 1, 0) as `Absent:Int:`,\n        if(sad.status = 'Day off', 1, 0) as `Day off:Int:`,\n        1 as `Total:Int:`,\n        sad.remarks as `Remarks`\nFROM    `tabSecurity Attendance` as  sa,\n        `tabSecurity Attendance Details` sad\nWHERE   sa.name = sad.parent    ",
+  "ref_doctype": "Security Attendance",
+  "reference_report": null,
+  "report_name": "Security Attendance Report",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Security Attendance Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "System Manager"
+   },
+   {
+    "parent": "Security Attendance Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Maintenance Job in-charge"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2019-02-07 10:42:43.433394",
+  "module": "Property Management Solution",
+  "name": "Outsourcing Attendance",
+  "prepared_report": 0,
+  "query": "SELECT  oa.owner as `Created by`,\n        oa.modified_by as `Approved by`,\n        upper(oa.shift_name) as `Shift`,\n        oa.shift_date as `Date:Date:`,\n        oad.person_name as `Person Name`,\n        oad.position as `Position`, \n        if(oad.status = 'Present', 1, 0) as `Present:Int:`,\n        if(oad.status = 'Absent ', 1, 0) as `Absent:Int:`,\n        if(oad.status = 'Day off', 1, 0) as `Day off:Int:`,\n        1 as `Total:Int:`,\n        oad.remarks as `Remarks`\nFROM    `tabOutsourcing Attendance` as  oa,\n        `tabOutsourcing Attendance Details` oad\nWHERE   oa.name = oad.parent    ",
+  "ref_doctype": "Outsourcing Attendance",
+  "reference_report": null,
+  "report_name": "Outsourcing Attendance",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Outsourcing Attendance",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "System Manager"
+   },
+   {
+    "parent": "Outsourcing Attendance",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Maintenance Job in-charge"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 1,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2019-11-02 14:05:27.521112",
+  "module": "Property Management Solution",
+  "name": "Security Deposit",
+  "prepared_report": 0,
+  "query": "SELECT \tjea.cost_center AS \"Cost Center:Link/Property:150\",\n\tjea.party AS \"Party:Link/Property:150\", \n\tCONCAT(pr.bedroom, ' BHK') AS \"BHK::50\",\n\taccount_currency AS \"Currency::50\",\n\tFORMAT(SUM(debit_in_account_currency - credit_in_account_currency) * -1,2) \"Amount::100\"\nFROM `tabJournal Entry Account` jea\n\tLEFT JOIN `tabProperty` pr on jea.cost_center = pr.cost_center\nWHERE jea.account LIKE %(account)s \nAND jea.docstatus = '1'\nGROUP BY jea.cost_center, party",
+  "ref_doctype": "Journal Entry",
+  "reference_report": null,
+  "report_name": "Security Deposit",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Security Deposit",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "Security Deposit",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 1,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2019-12-18 13:05:26.776123",
+  "module": "Property Management Solution",
+  "name": "Invoice Details",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Sales Invoice",
+  "reference_report": null,
+  "report_name": "Invoice Details",
+  "report_script": null,
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Invoice Details",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Invoice Details",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": "Viva Towers Official",
+  "modified": "2019-12-18 09:36:54.791826",
+  "module": "Property Management Solution",
+  "name": "Mis-Income Break Up",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Sales Invoice",
+  "reference_report": null,
+  "report_name": "Mis-Income Break Up",
+  "report_script": null,
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Mis-Income Break Up",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Mis-Income Break Up",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2019-12-18 10:54:54.869935",
+  "module": "Property Management Solution",
+  "name": "Utility Invoices",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Sales Invoice",
+  "reference_report": null,
+  "report_name": "Utility Invoices",
+  "report_script": null,
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Utility Invoices",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock Manager"
+   },
+   {
+    "parent": "Utility Invoices",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "Utility Invoices",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "Utility Invoices",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": "",
+  "json": null,
+  "letter_head": null,
+  "modified": "2022-08-04 16:11:10.847373",
+  "module": "Property Management Solution",
+  "name": "Debtors Report",
+  "prepared_report": 0,
+  "query": "SELECT  COALESCE(gsi.name, \"TOTAL\") AS \"Invoice No:Link/Sales Invoice:150\",\r\n        if(gsi.name is null, \"\", gsi.customer) AS \"Customer:Link/Customer:250\",\r\n        gsi.cost_center AS \"Cost Center:Data:250\",\r\n        gsi.item AS \"Items:Data:300\",\r\n\t\tgsi.from_date AS \"From Date:Date:100\", \r\n\t\tgsi.to_date AS \"To Date:Date:100\", \r\n\t\tgsi.due_date AS \"Due Date:Date:100\", \r\n        FORMAT(SUM(gsi.usd),2) AS \"USD:Decimal/2:100\",\r\n        FORMAT(SUM(gsi.tzs),2) AS \"TZS:Decimal/2:100\",\r\n        gsi._user_tags as \"Remarks:Data:200\" \r\nFROM\r\n(\r\n    SELECT \tsi.name, \r\n    \t\tsi.customer,\r\n    \t\tsi.cost_center,\r\n    \t\tGROUP_CONCAT(sid.item_name) AS \"item\",\r\n    \t\tsi.from_date,\r\n    \t\tsi.to_date, \r\n    \t\tsi.due_date, \r\n    \t\tsi.currency,\r\n        \tMAX(IF(si.currency = \"USD\", IF( si.currency = si.party_account_currency, si.outstanding_amount, si.outstanding_amount/si.conversion_rate), 0)) AS \"usd\",\r\n    \t    MAX(IF(si.currency = \"TZS\", IF( si.currency = si.party_account_currency, si.outstanding_amount, si.outstanding_amount*si.conversion_rate), 0)) AS \"tzs\",\r\n    \t\tsi._user_tags\r\n    FROM `tabSales Invoice` si LEFT JOIN `tabSales Invoice Item` as sid ON si.name = sid.parent\r\n    WHERE si.status IN (\"Partly Paid\", \"Unpaid\", \"Unpaid and Discounted\", \"Partly Paid and Discounted\", \"Overdue and Discounted\", \"Overdue\")\r\n    GROUP BY si.name\r\n) gsi\r\nGROUP BY gsi.customer, gsi.name WITH ROLLUP",
+  "ref_doctype": "Sales Invoice",
+  "reference_report": null,
+  "report_name": "Debtors Report",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Debtors Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "Debtors Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2021-06-18 15:28:51.610759",
+  "module": "Property Management Solution",
+  "name": "Property Status",
+  "prepared_report": 0,
+  "query": "SELECT  p.name AS \"Property:Link/Property:150\",\n        p.type AS \"Property Type:Data:150\",\n        p.bedroom AS \"BHK:Data:50\",\n        p.builtup_area AS \"Builtup Area:Data:100\",\n        p.carpet_area AS \"Carper Area:Data:100\",\n        p.unit_owner AS \"Unit Owner:Link/Customer:150\",\n        c.customer_group AS \"Owner Type:Data:150\",\n        l.lease_customer AS \"Customer:Link/Customer:150\",\n        l.end_date AS \"End Date:Date:100\",\n        l.lease_status AS \"Status:Data:80\",\n        l.name AS \"Lease:Link/Lease:100\",\n        l.security_deposit_currency AS \"Currency:Data:50\",\n        l.security_deposit AS \"Amount:Float:100\",\n        l.security_status AS \"Security Status:Data:100\",\n        GROUP_CONCAT(CONCAT_WS('-',li.lease_item,FORMAT(li.amount,2)) SEPARATOR ' | ') AS \"Lease Details:Data:400\"\nFROM `tabProperty` p left join `tabLease` l on p.name = l.property\n                     LEFT JOIN `tabLease Item` li on l.name = li.parent\n                  left join `tabCustomer` c on p.unit_owner = c.name\nWHERE p.type LIKE concat(\"%%\", IF(%(property_type)s = \" \" , \"\", %(property_type)s), \"%%\")\nAND c.customer_group LIKE concat(\"%%\", IF(%(owner_type)s = \" \" , \"\", %(owner_type)s), \"%%\")\nGROUP by p.name\nORDER BY p.name",
+  "ref_doctype": "Lease",
+  "reference_report": null,
+  "report_name": "Property Status",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Property Status",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "System Manager"
+   },
+   {
+    "parent": "Property Status",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Property Manager"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": "{\"order_by\": \"`tabLease`.`modified` desc\", \"filters\": [[\"Lease\", \"signed_agreement_received\", \"=\", 0, false]], \"fields\": [[\"name\", \"Lease\"], [\"docstatus\", \"Lease\"], [\"property_owner\", \"Lease\"], [\"customer\", \"Lease\"], [\"start_date\", \"Lease\"], [\"end_date\", \"Lease\"]], \"add_totals_row\": 0, \"add_total_row\": 0, \"page_length\": 20}",
+  "letter_head": null,
+  "modified": "2020-03-10 13:15:06.003053",
+  "module": "Property Management Solution",
+  "name": "Pending Signed Agreement",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Lease",
+  "reference_report": null,
+  "report_name": "Pending Signed Agreement",
+  "report_script": null,
+  "report_type": "Report Builder",
+  "roles": [
+   {
+    "parent": "Pending Signed Agreement",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "System Manager"
+   },
+   {
+    "parent": "Pending Signed Agreement",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Property Manager"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": "{\"order_by\": \"`tabLease`.`modified` desc\", \"filters\": [[\"Lease\", \"stamp_duty_paid_by_tenant\", \"=\", 0, false]], \"fields\": [[\"name\", \"Lease\"], [\"docstatus\", \"Lease\"], [\"property_owner\", \"Lease\"], [\"customer\", \"Lease\"], [\"start_date\", \"Lease\"], [\"end_date\", \"Lease\"]], \"add_totals_row\": 0, \"add_total_row\": 0, \"page_length\": 20}",
+  "letter_head": null,
+  "modified": "2020-03-10 13:14:59.488330",
+  "module": "Property Management Solution",
+  "name": "Stamp Duty Paid by Tenant",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Lease",
+  "reference_report": null,
+  "report_name": "Stamp Duty Paid by Tenant",
+  "report_script": null,
+  "report_type": "Report Builder",
+  "roles": [
+   {
+    "parent": "Stamp Duty Paid by Tenant",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "System Manager"
+   },
+   {
+    "parent": "Stamp Duty Paid by Tenant",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Property Manager"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 1,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2021-11-03 08:59:48.390055",
+  "module": "Property Management Solution",
+  "name": "Creditors Report",
+  "prepared_report": 0,
+  "query": "SELECT \tpi.name AS \"Invoice No:Link/Purchase Invoice:150\", \r\n\t\tpi.supplier AS \"Customer:Link/Supplier:150\", \r\n\t\tGROUP_CONCAT(pid.item_name) AS \"Items:Data:200\",\r\n\t\tpi.due_date AS \"Due Date:Date:100\", \r\n\t\tROUND(IF(pi.currency = \"USD\", IF( pi.currency = pi.party_account_currency, pi.outstanding_amount, pi.outstanding_amount/pi.conversion_rate), 0),2) AS \"USD:Float:100\",\r\n\t\tROUND(IF(pi.currency = \"TZS\", IF( pi.currency = pi.party_account_currency, pi.outstanding_amount, pi.outstanding_amount*pi.conversion_rate), 0),2) AS \"TZS:Float:100\",\r\n\t\tpi._user_tags as \"Remarks:Data:200\"\r\nFROM `tabPurchase Invoice` pi LEFT JOIN `tabPurchase Invoice Item` as pid ON pi.name = pid.parent\r\nWHERE pi.status IN (\"Sumitted\", \"Unpaid\", \"Overdue\")\r\nGROUP BY pi.name",
+  "ref_doctype": "Purchase Invoice",
+  "reference_report": null,
+  "report_name": "Creditors Report",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Creditors Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Creditors Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "Creditors Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "Creditors Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Auditor"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 1,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2020-04-18 23:59:53.516924",
+  "module": "Property Management Solution",
+  "name": "Self Consumption in Maintenance Job Card",
+  "prepared_report": 0,
+  "query": "SELECT  jc.name as \"Maintenance Job Card:Link/Issue:200\",\n        jc.property_name  as \"Property:Link/Property:200\",\n        jc.customer  as \"Customer:Link/Customer:200\",\n        jc.opening_date as \"Opening Date:Date:120\",\n        jc.resolution_date as \"Resolution Date:Date:120\",\n        jc.modified_by as \"Modified By:Link/User:200\",\n        jc.status as \"Status:Data:120\",\n        jcmb.item as \"Item:Link/Item:200\",\n        jcmb.quantity as \"Quantity:Float:200\",\n        jcmb.uom as \"UOM:Link/UOM:200\",\n        jcmb.rate as \"Rate:Currency:120\",\n        jcmb.amount as \"Amount:Currency:200\",\n        \"\" as \"Sales Invoice:Link/Sales Invoice:200\"\n        FROM `tabIssue` jc\n        INNER JOIN `tabIssue Materials Detail` jcmb on jcmb.parent = jc.name\n        WHERE jc.docstatus = 0\n          AND DATE(jc.opening_date) BETWEEN %(start_date)s AND %(end_date)s\nUNION ALL\nSELECT  jc.name as \"Maintenance Job Card:Link/Issue:200\",\n        jc.property_name  as \"Property:Link/Property:200\",\n        jc.customer  as \"Customer:Link/Customer:200\",\n        jc.opening_date as \"Opening Date:Date:120\",\n        jc.resolution_date as \"Resolution Date:Date:120\",\n        jc.modified_by as \"Modified By:Link/User:200\",\n        jc.status as \"Status:Data:120\",\n        jcb.item as \"Item:Link/Item:200\",\n        jcb.quantity as \"Quantity:Float:200\",\n        jcb.uom as \"UOM:Link/UOM:200\",\n        jcb.rate as \"Rate:Currency:120\",\n        jcb.amount as \"Amount:Currency:200\",\n        jcb.sales_invoice as \"Sales Invoice:Link/Sales Invoice:200\"\n        FROM `tabIssue` jc\n        INNER JOIN `tabIssue Materials Billed` jcb on jcb.parent = jc.name\n        WHERE jc.docstatus = 1\n          AND DATE(jc.opening_date) BETWEEN %(start_date)s AND %(end_date)s\nORDER BY \"Opening Date\", \"Maintenance Job Card\", \"Sales Invoice\", \"Item\"\n",
+  "ref_doctype": "Issue",
+  "reference_report": null,
+  "report_name": "Self Consumption in Maintenance Job Card",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Self Consumption in Maintenance Job Card",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Floor Maintenance Supervisor"
+   },
+   {
+    "parent": "Self Consumption in Maintenance Job Card",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Support Team"
+   },
+   {
+    "parent": "Self Consumption in Maintenance Job Card",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Maintenance Manager"
+   },
+   {
+    "parent": "Self Consumption in Maintenance Job Card",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Maintenance Job in-charge"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2020-04-27 11:38:13.263202",
+  "module": "Property Management Solution",
+  "name": "Lease Information",
+  "prepared_report": 0,
+  "query": "SELECT  p.type AS \"Property Type:Data:0\",\n        l.property AS \"Property:Link/Property:0\",\n        l.name \"Lease No.:Data:0\",\n        p.bedroom AS \"BHK:Data:0\",\n        p.builtup_area AS \"Builtup Area:Data:0\",\n        p.carpet_area AS \"Carper Area:Data:0\",\n        p.unit_owner AS \"Unit Owner:Link/Customer:0\",\n        l.lease_customer AS \"Lease Customer:Link/Customer:0\",\n        l.customer as \"POS Customer:Link/Customer:0\",\n        l.lease_date as \"Lease Date:Date:0\",\n        l.start_date as \"Lease Start:Date:0\",\n        l.end_date as \"Lease End:Date:0\",\n        if(l.signed_agreement_received = 1, \"Yes\", \" \") AS \"Agreement Status:Data:0\",\n        if(l.stamp_duty_paid_by_tenant = 1, \"Yes\", \" \") AS \"Stamp Duty Status:Data:0\",\n        l.security_deposit_currency as \"Security Deposit Currency:Data:0\",\n        l.security_deposit as \"Security Amount:Currency/Security Deposit Currency:0\",\n        ld1.frequency AS \"Rent Frequency:Data:0\",\n        ld1.currency_code AS \"Rent Currency:Data:0\",\n        ld1.amount as \"Rent Amount:Currency/Rent Currency:0\",\n        ld2.frequency AS \"Service Charge Frequency:Data:0\",\n        ld2.currency_code AS \"Service Charge Currency:Data:0\",\n        ld2.amount as \"Service Charge Amount:Currency/Service Charge Currency:0\"\nFROM `tabLease` l left join `tabProperty` p on l.property = p.name\n                  left join `tabLease Item` ld1 on l.name = ld1.parent and (ld1.lease_item in ('Commercial Rent', 'Residential Rent') or ld1.lease_item like 'Parking Slot%%')\n                  left join `tabLease Item` ld2 on l.name = ld2.parent and ld2.lease_item in ('Service Charge - Commercial','Service Charge - Residential')\nWHERE p.type LIKE concat(\"%%\", IF(%(property_type)s = \" \" , \"\", %(property_type)s), \"%%\")                 ",
+  "ref_doctype": "Lease",
+  "reference_report": null,
+  "report_name": "Lease Information",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2020-04-27 13:53:51.035254",
+  "module": "Property Management Solution",
+  "name": "Subscription Service Report",
+  "prepared_report": 0,
+  "query": "SELECT si.name, \r\n       si.customer,\r\n\t   from_date,\r\n\t   to_date\r\nFROM `tabSales Invoice` si LEFT JOIN `tabSales Invoice Item` sii on si.name = sii.parent\r\nWHERE si.from_date IS NOT NULL \r\nAND   si.to_date IS NOT NULL \r\nAND   sii.item_group = 'Services'\r\nAND   si.item_name = %(service_type)s;",
+  "ref_doctype": "Sales Invoice",
+  "reference_report": null,
+  "report_name": "Subscription Service Report",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Subscription Service Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "Subscription Service Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 1,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2020-04-28 01:05:52.715499",
+  "module": "Property Management Solution",
+  "name": "Rent Invoices Details",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Sales Invoice",
+  "reference_report": "",
+  "report_name": "Rent Invoices Details",
+  "report_script": null,
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Rent Invoices Details",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "Rent Invoices Details",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 1,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2021-05-10 14:58:57.728167",
+  "module": "Property Management Solution",
+  "name": "Withholding Tax Summary on Sales (Properties)",
+  "prepared_report": 0,
+  "query": "SELECT si.posting_date as \"Date:Date:\",\n       si.customer_name as \"Customer:Link/Customer:\", \n       sii.item_name as \"Perticulars:Data:\", \n       si.name as \"Voucher No:Link/Sales Invoice:\", \n       si.lease as \"Property:Link/Lease:\",\n       concat_ws(' and ', sii.service_start_date, sii.service_end_date) as \"Period:Data:\", \n       sii.base_net_amount as \"Amount:Currency:\", \n       sii.base_net_amount * (sii.withholding_tax_rate/100) as \"Withholding Tax:Currency:\",\n       si.tra_control_number as \"Contol Number:Data:\",\n       si.witholding_tax_certificate_number as \"Contol Number:Data:\",\n       if(si.tax_id,si.tax_id,c.tax_id) as \"TIN Number:Data:\"\nFROM `tabSales Invoice` si LEFT JOIN `tabSales Invoice Item` sii ON si.name = sii.parent \nINNER JOIN `tabCustomer` c ON si.customer = c.name\nWHERE si.docstatus = 1\nAND   si.is_return = '0' \nAND   sii.withholding_tax_rate > 0\nAND   si.posting_date >= %(from_date)s \nAND   si.posting_date <= %(to_date)s",
+  "ref_doctype": "Sales Invoice",
+  "reference_report": null,
+  "report_name": "Withholding Tax Summary on Sales (Properties)",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Withholding Tax Summary on Sales (Properties)",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "Withholding Tax Summary on Sales (Properties)",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 1,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2021-04-14 02:20:34.835757",
+  "module": "Property Management Solution",
+  "name": "Rent Invoices Details USD",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Sales Invoice",
+  "reference_report": "",
+  "report_name": "Rent Invoices Details USD",
+  "report_script": null,
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Rent Invoices Details USD",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "Rent Invoices Details USD",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 1,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": "frappe.query_reports[\"Withholding Tax Summary on Sales for Properties\"] = {\r\n\t\"filters\": [\r\n        {\r\n            \"fieldname\": \"from_date\",\r\n            \"label\": __(\"From Date\"),\r\n            \"fieldtype\": \"Date\",\r\n            \"default\": frappe.datetime.add_months(frappe.datetime.get_today(), -1),\r\n        },\r\n        {\r\n            \"fieldname\": \"to_date\",\r\n            \"label\": __(\"To Date\"),\r\n            \"fieldtype\": \"Date\",\r\n            \"default\": frappe.datetime.get_today(),\r\n        },\r\n\t]\r\n};",
+  "json": null,
+  "letter_head": null,
+  "modified": "2021-05-10 15:53:30.857930",
+  "module": "Property Management Solution",
+  "name": "Withholding Tax Summary on Sales for Properties",
+  "prepared_report": 0,
+  "query": "SELECT si.posting_date as \"Date:Date:\",\n       si.customer_name as \"Customer:Link/Customer:\", \n       sii.item_name as \"Perticulars:Data:\", \n       si.name as \"Voucher No:Link/Sales Invoice:\", \n       si.lease as \"Property:Link/Lease:\",\n       concat_ws(' and ', sii.service_start_date, sii.service_end_date) as \"Period:Data:\", \n       sii.base_net_amount as \"Amount:Currency:\", \n       sii.base_net_amount * (sii.withholding_tax_rate/100) as \"Withholding Tax:Currency:\",\n       si.tra_control_number as \"Contol Number:Data:\",\n       si.witholding_tax_certificate_number as \"Contol Number:Data:\",\n       if(si.tax_id,si.tax_id,c.tax_id) as \"TIN Number:Data:\"\nFROM `tabSales Invoice` si LEFT JOIN `tabSales Invoice Item` sii ON si.name = sii.parent \nINNER JOIN `tabCustomer` c ON si.customer = c.name\nWHERE si.docstatus = 1\nAND   si.is_return = '0' \nAND   sii.withholding_tax_rate > 0\nAND   si.posting_date >= %(from_date)s \nAND   si.posting_date <= %(to_date)s",
+  "ref_doctype": "Sales Invoice",
+  "reference_report": null,
+  "report_name": "Withholding Tax Summary on Sales for Properties",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Withholding Tax Summary on Sales for Properties",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "Withholding Tax Summary on Sales for Properties",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": "{\"filters\":[[\"Target\",\"name\",\"like\",\"%Target\",false]],\"fields\":[[\"name\",\"Target\"],[\"target\",\"Target\"],[\"reservations\",\"Target\"],[\"done_deal\",\"Target\"],[\"potential\",\"Target\"]],\"order_by\":\"`tabTarget`.`modified` desc\",\"page_length\":20,\"column_widths\":{\"name\":120,\"target\":120,\"reservations\":120,\"done_deal\":120,\"potential\":120},\"group_by\":null}",
+  "letter_head": null,
+  "modified": "2024-12-12 16:05:29.213770",
+  "module": "Property Management Solution",
+  "name": "Target Report",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Target",
+  "reference_report": null,
+  "report_name": "Target Report",
+  "report_script": "",
+  "report_type": "Report Builder",
+  "roles": [
+   {
+    "parent": "Target Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "System Manager"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2024-12-12 17:30:36.224313",
+  "module": "Property Management Solution",
+  "name": "Target",
+  "prepared_report": 0,
+  "query": "SELECT\n\n\n'Target' as category,\n\n\ntarget as value\n\n\nFROM tabTarget\n\n\nWHERE name = CONCAT(LPAD(MONTH(CURDATE()), 2, '0'), '-', YEAR(CURDATE()), '-Target')\n\n\n\nUNION ALL\n\n\n\nSELECT\n\n\n'Reservations' as category,\n\n\nSUM(reservations) as value\n\n\nFROM tabTarget\n\n\nWHERE name = CONCAT(LPAD(MONTH(CURDATE()), 2, '0'), '-', YEAR(CURDATE()), '-Target')\n\n\n\nUNION ALL\n\n\n\nSELECT\n\n\n'Done Deal' as category,\n\n\nSUM(done_deal) as value\n\n\nFROM tabTarget\n\n\nWHERE name = CONCAT(LPAD(MONTH(CURDATE()), 2, '0'), '-', YEAR(CURDATE()), '-Target') \n",
+  "ref_doctype": "Target",
+  "reference_report": null,
+  "report_name": "Target",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Target",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "System Manager"
+   }
+  ],
+  "timeout": 0
+ }
+]
