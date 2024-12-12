@@ -1,19 +1,15 @@
 {
  "charts": [
   {
-   "chart_name": "Reservations",
-   "label": "Properties Status"
-  },
-  {
    "chart_name": "Reservations 2",
    "label": "Properties Status Pie"
   },
   {
-   "chart_name": "Reservations Donut",
-   "label": "Properties Status Donut"
+   "chart_name": "Target Vs. Acheivement",
+   "label": "Target Vs. Acheivement"
   }
  ],
- "content": "[{\"id\":\"8izK3CJx-T\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Drop Menu\",\"col\":12}},{\"id\":\"lcg7IFzVvw\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Properties Status Pie\",\"col\":12}},{\"id\":\"cQLSp79a95\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Properties Status Donut\",\"col\":12}},{\"id\":\"1TSmAkFkPW\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Properties Status\",\"col\":12}}]",
+ "content": "[{\"id\":\"8izK3CJx-T\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Drop Menu\",\"col\":12}},{\"id\":\"lcg7IFzVvw\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Properties Status Pie\",\"col\":12}},{\"id\":\"BVVM2TDNFH\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Target Vs. Acheivement\",\"col\":12}}]",
  "creation": "2024-11-14 13:25:45.403621",
  "custom_blocks": [
   {
@@ -31,7 +27,7 @@
  "is_hidden": 0,
  "label": "Inventory",
  "links": [],
- "modified": "2024-12-05 16:30:39.789868",
+ "modified": "2024-12-12 16:24:24.077837",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Inventory",

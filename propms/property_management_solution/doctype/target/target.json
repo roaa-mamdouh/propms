@@ -1,0 +1,62 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:{MM}-{YYYY}-Target",
+ "creation": "2024-12-12 16:35:57.683275",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "target",
+  "reservations",
+  "done_deal",
+  "potential"
+ ],
+ "fields": [
+  {
+   "fieldname": "target",
+   "fieldtype": "Int",
+   "label": "Target"
+  },
+  {
+   "fieldname": "reservations",
+   "fieldtype": "Int",
+   "label": "Reservations"
+  },
+  {
+   "fieldname": "done_deal",
+   "fieldtype": "Int",
+   "label": "Done Deal"
+  },
+  {
+   "fieldname": "potential",
+   "fieldtype": "Int",
+   "label": "Potential"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-31 17:19:30.073167",
+ "modified_by": "Administrator",
+ "module": "Property Management Solution",
+ "name": "Target",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
