@@ -178,7 +178,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "On Sale\nOn Lease\nManaged for Customer\nOff lease in 3 months\nLeased\nSold\nRemoved",
+   "options": "On Sale\nOn Lease\nReserved\nManaged for Customer\nOff lease in 3 months\nLeased\nSold\nRemoved",
    "reqd": 1
   },
   {
@@ -399,7 +399,7 @@
  "image_field": "photo",
  "is_tree": 1,
  "links": [],
- "modified": "2024-12-05 14:26:39.344859",
+ "modified": "2024-12-14 13:19:41.211906",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Property",
