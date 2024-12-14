@@ -2,12 +2,13 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:{MM}-{YYYY}-Target",
+ "autoname": "format:{MM}-{YYYY}-{sales_person}-Target",
  "creation": "2024-12-12 16:35:57.683275",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "target",
+  "sales_person",
   "reservations",
   "done_deal",
   "potential"
@@ -32,11 +33,17 @@
    "fieldname": "potential",
    "fieldtype": "Int",
    "label": "Potential"
+  },
+  {
+   "fieldname": "sales_person",
+   "fieldtype": "Link",
+   "label": "Sales Person",
+   "options": "User"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-31 17:19:30.073167",
+ "modified": "2024-12-14 16:59:22.969729",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Target",
@@ -51,7 +58,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "System Manager",
+   "role": "All",
    "share": 1,
    "write": 1
   }

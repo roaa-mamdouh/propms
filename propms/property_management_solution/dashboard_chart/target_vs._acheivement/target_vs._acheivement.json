@@ -10,14 +10,18 @@
  "idx": 0,
  "is_public": 1,
  "is_standard": 1,
- "modified": "2024-12-12 18:56:47.043199",
+ "modified": "2024-12-14 12:35:02.826166",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Target Vs. Acheivement",
  "number_of_groups": 0,
  "owner": "Administrator",
  "report_name": "Target",
- "roles": [],
+ "roles": [
+  {
+   "role": "Sales User"
+  }
+ ],
  "time_interval": "Yearly",
  "timeseries": 0,
  "timespan": "Last Year",
