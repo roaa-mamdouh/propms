@@ -35,6 +35,7 @@
    "label": "Potential"
   },
   {
+   "default": "User",
    "fieldname": "sales_person",
    "fieldtype": "Link",
    "label": "Sales Person",
@@ -43,7 +44,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-14 16:59:22.969729",
+ "modified": "2024-12-16 12:29:28.383112",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Target",

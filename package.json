@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@editorjs/embed": "^2.7.6"
+  }
+}
