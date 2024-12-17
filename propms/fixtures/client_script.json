@@ -4,10 +4,10 @@
   "doctype": "Client Script",
   "dt": "Dashboard Chart",
   "enabled": 1,
-  "modified": "2024-12-16 18:23:55.048262",
+  "modified": "2024-12-17 17:20:32.423010",
   "module": "Property Management Solution",
   "name": "Set Chart User",
-  "script": "frappe.dashboard.Chart.prototype.refresh_chart = function () {\n  if (this.chart_name === \"Target Chart\") {\n    this.filters.user_email = frappe.session.user;\n    this.refresh(); // Trigger chart refresh\n  }\n};\n",
+  "script": "frappe.ui.form.on('Dashboard Chart', {\n  onload: function (frm) {\n    if (frm.doc.chart_name === \"Target Chart\") {\n      frm.set_value(\"filters\", JSON.stringify({ user_email: frappe.session.user }));\n    }\n  },\n});",
   "view": "Form"
  },
  {
