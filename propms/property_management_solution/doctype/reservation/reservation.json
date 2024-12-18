@@ -12,7 +12,12 @@
   "property_unit",
   "unit",
   "status",
-  "reserved_by"
+  "reserved_by",
+  "national_id",
+  "sales_person",
+  "sale",
+  "price",
+  "reservation_date"
  ],
  "fields": [
   {
@@ -53,10 +58,38 @@
    "in_list_view": 1,
    "label": "Reserved By",
    "options": "CRM Lead"
+  },
+  {
+   "default": "0",
+   "fieldname": "sale",
+   "fieldtype": "Check",
+   "label": "Sale?"
+  },
+  {
+   "fetch_from": "property_unit.total_price",
+   "fieldname": "price",
+   "fieldtype": "Int",
+   "label": "Price"
+  },
+  {
+   "fieldname": "national_id",
+   "fieldtype": "Attach",
+   "label": "National ID"
+  },
+  {
+   "fieldname": "sales_person",
+   "fieldtype": "Link",
+   "label": "Sales Person",
+   "options": "User"
+  },
+  {
+   "fieldname": "reservation_date",
+   "fieldtype": "Date",
+   "label": "Date"
   }
  ],
  "links": [],
- "modified": "2024-11-23 22:10:55.562066",
+ "modified": "2024-12-18 16:34:21.051489",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Reservation",

@@ -14,12 +14,11 @@
   "name1",
   "is_group",
   "category",
-  "tst",
+  "facilities",
   "column_break_2",
   "photo",
   "company",
   "cost_center",
-  "facilities",
   "section_break_4",
   "unit_owner",
   "type",
@@ -263,6 +262,8 @@
    "default": "1",
    "fieldname": "is_group",
    "fieldtype": "Check",
+   "in_filter": 1,
+   "in_standard_filter": 1,
    "label": "Project"
   },
   {
@@ -354,7 +355,7 @@
   },
   {
    "fieldname": "total_price",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Total Price"
   },
   {
@@ -387,19 +388,13 @@
    "fieldname": "longitude",
    "fieldtype": "Data",
    "label": "Longitude"
-  },
-  {
-   "fieldname": "tst",
-   "fieldtype": "Datetime",
-   "in_filter": 1,
-   "label": "tst"
   }
  ],
  "icon": "octicon octicon-home",
  "image_field": "photo",
  "is_tree": 1,
  "links": [],
- "modified": "2024-12-14 13:19:41.211906",
+ "modified": "2024-12-18 17:00:30.577568",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Property",
