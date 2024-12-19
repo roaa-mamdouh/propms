@@ -45,6 +45,7 @@
   "finishing",
   "furishing",
   "status",
+  "for_cancellation",
   "price_per_month_day",
   "price_per_meter",
   "total_price",
@@ -388,13 +389,20 @@
    "fieldname": "longitude",
    "fieldtype": "Data",
    "label": "Longitude"
+  },
+  {
+   "fieldname": "for_cancellation",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "For Cancellation",
+   "options": "On Sale\nOn Lease\nReserved\nManaged for Customer\nOff lease in 3 months\nLeased\nSold\nRemoved"
   }
  ],
  "icon": "octicon octicon-home",
  "image_field": "photo",
  "is_tree": 1,
  "links": [],
- "modified": "2024-12-18 17:00:30.577568",
+ "modified": "2024-12-19 13:46:52.266390",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Property",
