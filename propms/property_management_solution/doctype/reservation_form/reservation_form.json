@@ -6,14 +6,44 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_zoqd",
+  "reservation_form",
   "amended_from",
   "property_name",
-  "property_type"
+  "model_no",
+  "city",
+  "district",
+  "property_type",
+  "finishing",
+  "areasqm",
+  "unite_number",
+  "building_number",
+  "floor_number",
+  "how_did_you_hear_about_the_project",
+  "column_break_abzq",
+  "client_data",
+  "client_name",
+  "phone_number",
+  "another_phone_no",
+  "national_id",
+  "social_status",
+  "job_or_profession",
+  "reservation_details_section",
+  "price_per_meter",
+  "unit_price",
+  "facilitie_price",
+  "column_break_ugbp",
+  "fixed_amount",
+  "installments_frequency",
+  "total_number_of_installment",
+  "start_date_of_installment",
+  "end_date",
+  "total_amount_paid"
  ],
  "fields": [
   {
    "fieldname": "section_break_zoqd",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Reservation Form "
   },
   {
    "fieldname": "amended_from",
@@ -34,15 +64,176 @@
   {
    "fetch_from": "property_name.type",
    "fieldname": "property_type",
+   "fieldtype": "Data",
+   "label": "Property type"
+  },
+  {
+   "fetch_from": "property_name.city",
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "bold": 1,
+   "fieldname": "reservation_form",
+   "fieldtype": "Heading",
+   "label": "Unit Data"
+  },
+  {
+   "fieldname": "model_no",
+   "fieldtype": "Data",
+   "label": "model No"
+  },
+  {
+   "fetch_from": "property_name.district",
+   "fieldname": "district",
+   "fieldtype": "Data",
+   "label": "District"
+  },
+  {
+   "fetch_from": "property_name.finishing",
+   "fieldname": "finishing",
+   "fieldtype": "Data",
+   "label": "Finishing"
+  },
+  {
+   "fetch_from": "property_name.building_number",
+   "fieldname": "building_number",
+   "fieldtype": "Data",
+   "label": "Building number "
+  },
+  {
+   "fetch_from": "property_name.floor_number",
+   "fieldname": "floor_number",
+   "fieldtype": "Data",
+   "label": "Floor number"
+  },
+  {
+   "fetch_from": "property_name.unit_number",
+   "fieldname": "unite_number",
+   "fieldtype": "Data",
+   "label": "Unite number"
+  },
+  {
+   "fieldname": "client_data",
+   "fieldtype": "Heading",
+   "label": "Client Data"
+  },
+  {
+   "fieldname": "client_name",
    "fieldtype": "Link",
-   "label": "Property type",
-   "options": "Unit Type"
+   "label": "Client Name",
+   "options": "Lead"
+  },
+  {
+   "fieldname": "national_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "National ID",
+   "length": 14,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "client_name.mobile_no",
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone No.",
+   "reqd": 1
+  },
+  {
+   "fieldname": "another_phone_no",
+   "fieldtype": "Data",
+   "label": "Another Phone No."
+  },
+  {
+   "fetch_from": "client_name.job_title",
+   "fieldname": "job_or_profession",
+   "fieldtype": "Data",
+   "label": "Job or Profession"
+  },
+  {
+   "fetch_from": "property_name.storage_area",
+   "fieldname": "areasqm",
+   "fieldtype": "Data",
+   "label": "Area(sqm)"
+  },
+  {
+   "fieldname": "social_status",
+   "fieldtype": "Data",
+   "label": "Social status"
+  },
+  {
+   "fieldname": "how_did_you_hear_about_the_project",
+   "fieldtype": "Data",
+   "label": "How did you hear about the project?"
+  },
+  {
+   "fieldname": "column_break_abzq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reservation_details_section",
+   "fieldtype": "Section Break",
+   "label": "Reservation Details"
+  },
+  {
+   "fieldname": "column_break_ugbp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fixed_amount",
+   "fieldtype": "Float",
+   "label": "Fixed Amount",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "installments_frequency",
+   "fieldtype": "Select",
+   "label": "Installments Frequency",
+   "non_negative": 1,
+   "options": "Monthly\nQuarterly\nYearly"
+  },
+  {
+   "fieldname": "total_number_of_installment",
+   "fieldtype": "Int",
+   "label": "Total Number of Installment"
+  },
+  {
+   "fieldname": "start_date_of_installment",
+   "fieldtype": "Datetime",
+   "label": "Start Date of Installment"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Datetime",
+   "label": "End Date "
+  },
+  {
+   "fieldname": "total_amount_paid",
+   "fieldtype": "Currency",
+   "label": "Total Amount Paid"
+  },
+  {
+   "fetch_from": "property_name.price_per_meter",
+   "fieldname": "price_per_meter",
+   "fieldtype": "Int",
+   "label": "Price Per Meter"
+  },
+  {
+   "fieldname": "unit_price",
+   "fieldtype": "Currency",
+   "label": "Unit Price"
+  },
+  {
+   "fieldname": "facilitie_price",
+   "fieldtype": "Currency",
+   "label": "Facilitie Price"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-14 14:56:14.762974",
+ "modified": "2024-12-24 13:22:35.996684",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Reservation form",

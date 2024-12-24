@@ -179,7 +179,15 @@ fixtures = [
             ]
         ],
     },
+  
+    
 ]
+
+
+
+
+
+
 
 
 doc_events = {
@@ -237,6 +245,14 @@ fixtures = [
              "module", "=", "Property Management Solution"
          ]
  ]},
+    {"dt": "Reservation form","filters": [
+    
+          [
+           "module", "=", "Property Management Solution"
+          ]
+    
+    
+  ]},
     
 ]
     
