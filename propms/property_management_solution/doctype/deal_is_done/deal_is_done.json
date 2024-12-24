@@ -8,7 +8,8 @@
   "property",
   "final_price",
   "commission",
-  "details"
+  "details",
+  "tst2"
  ],
  "fields": [
   {
@@ -32,11 +33,16 @@
    "label": "Property",
    "link_filters": "[[\"Property\",\"is_group\",\"=\",0]]",
    "options": "Property"
+  },
+  {
+   "fieldname": "tst2",
+   "fieldtype": "Data",
+   "label": "tst2"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-18 17:01:41.292048",
+ "modified": "2024-12-24 13:22:08.140231",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Deal Is Done",

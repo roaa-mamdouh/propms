@@ -237,7 +237,8 @@ fixtures = [
              "module", "=", "Property Management Solution"
          ]
  ]},
-    
+    {"dt": "Facilities"},
+    {"dt": "Category"},
 ]
     
 

@@ -370,12 +370,6 @@
    "label": "Location"
   },
   {
-   "fieldname": "facilities",
-   "fieldtype": "Table MultiSelect",
-   "label": "Facilities",
-   "options": "Project Facilities"
-  },
-  {
    "fieldname": "storage_area",
    "fieldtype": "Float",
    "label": "Storage area"
@@ -396,13 +390,19 @@
    "hidden": 1,
    "label": "For Cancellation",
    "options": "On Sale\nOn Lease\nReserved\nManaged for Customer\nOff lease in 3 months\nLeased\nSold\nRemoved"
+  },
+  {
+   "fieldname": "facilities",
+   "fieldtype": "Table MultiSelect",
+   "label": "Facilities",
+   "options": "Project Facility"
   }
  ],
  "icon": "octicon octicon-home",
  "image_field": "photo",
  "is_tree": 1,
  "links": [],
- "modified": "2024-12-19 13:46:52.266390",
+ "modified": "2024-12-24 17:28:39.997408",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Property",
