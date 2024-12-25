@@ -247,8 +247,7 @@ fixtures = [
  ]},
     {"dt": "Facilities"},
     {"dt": "Category"},
-    
-  ]},
+
 ]
     
 
