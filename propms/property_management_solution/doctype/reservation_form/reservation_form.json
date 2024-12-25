@@ -31,6 +31,7 @@
   "price_per_meter",
   "unit_price",
   "facilitie_price",
+  "total_price",
   "column_break_ugbp",
   "fixed_amount",
   "installments_frequency",
@@ -182,7 +183,7 @@
   },
   {
    "fieldname": "fixed_amount",
-   "fieldtype": "Float",
+   "fieldtype": "Percent",
    "label": "Fixed Amount",
    "non_negative": 1
   },
@@ -228,12 +229,17 @@
    "fieldname": "facilitie_price",
    "fieldtype": "Currency",
    "label": "Facilitie Price"
+  },
+  {
+   "fieldname": "total_price",
+   "fieldtype": "Currency",
+   "label": "Total Price"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-24 13:22:35.996684",
+ "modified": "2024-12-25 13:51:43.506572",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Reservation form",
