@@ -8,6 +8,8 @@
   "property",
   "final_price",
   "commission",
+  "sales_person",
+  "payment_plan",
   "details",
   "tst2"
  ],
@@ -38,11 +40,23 @@
    "fieldname": "tst2",
    "fieldtype": "Data",
    "label": "tst2"
+  },
+  {
+   "fieldname": "sales_person",
+   "fieldtype": "Link",
+   "label": "Sales Person",
+   "link_filters": "[[\"User\",\"role\",\"=\",\"Sales User\"]]",
+   "options": "User"
+  },
+  {
+   "fieldname": "payment_plan",
+   "fieldtype": "Data",
+   "label": "Payment Plan"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-24 13:22:08.140231",
+ "modified": "2024-12-25 12:09:17.930804",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Deal Is Done",
