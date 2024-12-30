@@ -6,43 +6,59 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "unit_characteristics_section",
   "unit_number",
   "name1",
-  "image",
   "unit_owner",
-  "category",
-  "title_deed_number",
   "type",
+  "number_of_rooms",
+  "category",
+  "is_group",
+  "column_break_uytd",
   "bedroom",
   "master_bedroom",
   "common_bathroom",
+  "image",
+  "status",
+  "unit_details_section",
   "builtup_area",
-  "carpet_area",
-  "facing",
-  "num_of_parking",
-  "unit_assets",
-  "amenity_name",
-  "property_meter_reading",
-  "rent",
-  "security_deposit",
   "smoking",
+  "storage_area",
+  "facing",
+  "no_of_parking",
+  "city",
+  "district",
+  "developer",
+  "building_number",
+  "floor_number",
+  "column_break_duax",
+  "payment_type",
+  "security_deposit",
   "finishing",
   "furnishing",
-  "description",
-  "status",
+  "for_cancellation",
   "price_per_month_day",
   "price_per_meter",
-  "payment_type",
+  "total_price",
+  "unit_meters_section",
+  "property_meter_reading",
+  "more_information_section",
+  "amenity_name",
+  "column_break_qibd",
+  "unit_assets",
+  "description_section",
+  "description",
   "lft",
   "rgt",
-  "is_group",
+  "parent_unit",
   "old_parent",
-  "parent_unit"
+  "unit_location"
  ],
  "fields": [
   {
    "fieldname": "unit_number",
    "fieldtype": "Data",
+   "hidden": 1,
    "in_list_view": 1,
    "label": "Unit Number"
   },
@@ -61,11 +77,6 @@
    "fieldtype": "Link",
    "label": "Unit Owner",
    "options": "Contact"
-  },
-  {
-   "fieldname": "title_deed_number",
-   "fieldtype": "Data",
-   "label": "Title deed number"
   },
   {
    "fieldname": "type",
@@ -94,31 +105,16 @@
    "label": "Builtup Area"
   },
   {
-   "fieldname": "carpet_area",
-   "fieldtype": "Float",
-   "label": "Carpet Area"
-  },
-  {
    "fieldname": "facing",
    "fieldtype": "Select",
    "label": "Facing",
    "options": "North\nNorth-East\nEast\nSouth-East\nWest\nNorth-West\nSouth-West\nSouth"
   },
   {
-   "fieldname": "num_of_parking",
-   "fieldtype": "Int",
-   "label": "Num Of Parking"
-  },
-  {
    "fieldname": "unit_assets",
    "fieldtype": "Table",
    "label": "Unit Assets",
    "options": "Unit Assets"
-  },
-  {
-   "fieldname": "rent",
-   "fieldtype": "Currency",
-   "label": "Rent"
   },
   {
    "fieldname": "security_deposit",
@@ -146,7 +142,8 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "On Sale\nOn Lease\nOff Lease in 3 Months\nSold\nBooked\nManaged for customer"
+   "options": "On Sale\nOn Lease\nReserved\nManaged for Customer\nOff lease in 3 months\nLeased\nSold\nRemoved",
+   "reqd": 1
   },
   {
    "fieldname": "lft",
@@ -224,11 +221,105 @@
    "fieldtype": "Select",
    "label": "Payment Type",
    "options": "Cash\nInstallments\nCash or Installments"
+  },
+  {
+   "fieldname": "unit_characteristics_section",
+   "fieldtype": "Section Break",
+   "label": "UNIT CHARACTERISTICS"
+  },
+  {
+   "fieldname": "number_of_rooms",
+   "fieldtype": "Int",
+   "label": "Number Of Rooms"
+  },
+  {
+   "fieldname": "column_break_uytd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "unit_details_section",
+   "fieldtype": "Section Break",
+   "label": "UNIT DETAILS"
+  },
+  {
+   "fieldname": "column_break_duax",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "unit_meters_section",
+   "fieldtype": "Section Break",
+   "label": "Unit Meters"
+  },
+  {
+   "fieldname": "storage_area",
+   "fieldtype": "Float",
+   "label": "Storage Area"
+  },
+  {
+   "fieldname": "no_of_parking",
+   "fieldtype": "Int",
+   "label": "No Of Parking"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Data",
+   "label": "District"
+  },
+  {
+   "fieldname": "developer",
+   "fieldtype": "Data",
+   "label": "Developer"
+  },
+  {
+   "fieldname": "building_number",
+   "fieldtype": "Data",
+   "label": "Building Number"
+  },
+  {
+   "fieldname": "floor_number",
+   "fieldtype": "Data",
+   "label": "Floor Number"
+  },
+  {
+   "fieldname": "for_cancellation",
+   "fieldtype": "Select",
+   "label": "For Cancellation",
+   "options": "On Sale\nOn Lease\nReserved\nManaged for Customer\nOff lease in 3 months\nLeased\nSold\nRemoved"
+  },
+  {
+   "fieldname": "more_information_section",
+   "fieldtype": "Section Break",
+   "label": "More Information"
+  },
+  {
+   "fieldname": "column_break_qibd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "description_section",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "total_price",
+   "fieldtype": "Currency",
+   "label": "Total Price",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "unit_location",
+   "fieldtype": "Geolocation",
+   "label": "Unit Location"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-16 14:22:13.635260",
+ "modified": "2024-12-30 15:15:05.049186",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Unit",
