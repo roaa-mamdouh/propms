@@ -10,6 +10,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "submite",
   "identification_section",
   "name1",
   "is_group",
@@ -18,8 +19,8 @@
   "column_break_2",
   "photo",
   "company",
-  "garage_price",
   "cost_center",
+  "reservation_form_status",
   "section_break_4",
   "unit_owner",
   "type",
@@ -392,17 +393,28 @@
    "options": "Project Facility"
   },
   {
-   "fieldname": "garage_price",
-   "fieldtype": "Int",
+   "default": "Draft",
+   "fieldname": "reservation_form_status",
+   "fieldtype": "Select",
    "hidden": 1,
-   "label": "Garage Price"
+   "label": "Reservation Form Status",
+   "options": "Draft\nApproved\nWaiting for Approved\nRejected"
+  },
+  {
+   "fieldname": "submite",
+   "fieldtype": "Button",
+   "label": "Submite"
   }
  ],
  "icon": "octicon octicon-home",
  "image_field": "photo",
  "is_tree": 1,
  "links": [],
+<<<<<<< HEAD
+ "modified": "2024-12-30 16:38:36.246946",
+=======
  "modified": "2024-12-31 11:57:49.013233",
+>>>>>>> 181d8e7fcbb792b4abaa5e212a0b8249e1bb5c93
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Property",
