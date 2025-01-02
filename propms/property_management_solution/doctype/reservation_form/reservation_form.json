@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:form-{##}",
  "creation": "2024-12-14 12:33:35.101756",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -8,6 +9,7 @@
   "section_break_zoqd",
   "reservation_form",
   "amended_from",
+  "form",
   "property_name",
   "model_no",
   "city",
@@ -27,6 +29,7 @@
   "national_id",
   "social_status",
   "job_or_profession",
+  "status",
   "reservation_details_section",
   "price_per_meter",
   "unit_price",
@@ -234,15 +237,29 @@
    "fieldname": "total_price",
    "fieldtype": "Currency",
    "label": "Total Price"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Waiting for Approval\nDraft\nApproved\nRejected",
+   "read_only": 1
+  },
+  {
+   "fieldname": "form",
+   "fieldtype": "Data",
+   "label": "Form number"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-25 13:51:43.506572",
+ "modified": "2024-12-31 20:24:02.302900",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Reservation form",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -254,6 +271,19 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
    "share": 1,
    "submit": 1,
    "write": 1
@@ -261,5 +291,6 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_seen": 1
 }
