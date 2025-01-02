@@ -32,6 +32,7 @@
   "unit_price",
   "facilitie_price",
   "total_price",
+  "status",
   "column_break_ugbp",
   "fixed_amount",
   "installments_frequency",
@@ -234,12 +235,19 @@
    "fieldname": "total_price",
    "fieldtype": "Currency",
    "label": "Total Price"
+  },
+  {
+   "default": "Reservation",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "N/A\nReservation\nDone\nCancel"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-25 13:51:43.506572",
+ "modified": "2024-12-31 12:14:44.990474",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Reservation form",
@@ -253,9 +261,33 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "System Manager",
+   "role": "Sales User",
    "share": 1,
    "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
    "write": 1
   }
  ],
