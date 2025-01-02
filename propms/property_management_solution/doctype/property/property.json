@@ -55,8 +55,6 @@
   "unit_assets",
   "column_break_24",
   "amenity_name",
-  "property_meters_section",
-  "property_meter_reading",
   "description_section",
   "description",
   "lft",
@@ -179,8 +177,11 @@
   {
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Status",
-   "options": "On Sale\nOn Lease\nReserved\nManaged for Customer\nOff lease in 3 months\nLeased\nSold\nRemoved",
+   "options": "On Sale\nOn Lease\nReserved\nOff lease in 3 months\nLeased\nSold\nRemoved",
    "reqd": 1
   },
   {
@@ -209,18 +210,6 @@
   },
   {
    "depends_on": "eval: doc.is_group == 0",
-   "fieldname": "property_meters_section",
-   "fieldtype": "Section Break",
-   "label": "Property Meters"
-  },
-  {
-   "fieldname": "property_meter_reading",
-   "fieldtype": "Table",
-   "label": "Property Meter Reading",
-   "options": "Property Meter Reading"
-  },
-  {
-   "depends_on": "eval: doc.is_group == 0",
    "fieldname": "description_section",
    "fieldtype": "Section Break"
   },
@@ -233,14 +222,12 @@
    "fieldname": "cost_center",
    "fieldtype": "Link",
    "hidden": 1,
-   "in_list_view": 1,
    "label": "Cost Center",
    "options": "Cost Center"
   },
   {
    "fieldname": "company",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "Company",
    "options": "Company",
    "reqd": 1
@@ -296,16 +283,18 @@
    "options": "Fully Furnished\nSemi Furnished\nUnfurnished"
   },
   {
-   "depends_on": "eval:doc.status === \"On lease\"",
+   "depends_on": "eval:doc.status === \"On Lease\"",
    "fieldname": "price_per_month_day",
    "fieldtype": "Int",
+   "hidden": 1,
    "label": "Price per month/day",
-   "mandatory_depends_on": "eval:doc.status === \"On lease\""
+   "mandatory_depends_on": "eval:doc.status === \"On Lease\""
   },
   {
    "depends_on": "eval:doc.status === \"On Sale\"",
    "fieldname": "price_per_meter",
    "fieldtype": "Int",
+   "hidden": 1,
    "label": "Price per meter",
    "mandatory_depends_on": "eval:doc.status === \"On Sale\""
   },
@@ -329,6 +318,9 @@
   {
    "fieldname": "city",
    "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "City"
   },
   {
@@ -387,11 +379,12 @@
    "label": "Longitude"
   },
   {
+   "default": "Available",
    "fieldname": "for_cancellation",
    "fieldtype": "Select",
    "hidden": 1,
    "label": "For Cancellation",
-   "options": "On Sale\nOn Lease\nReserved\nManaged for Customer\nOff lease in 3 months\nLeased\nSold\nRemoved"
+   "options": "Available\nOn Sale\nOn Lease\nReserved\nOff lease in 3 months\nLeased\nSold\nRemoved"
   },
   {
    "fieldname": "facilities",
@@ -417,7 +410,11 @@
  "image_field": "photo",
  "is_tree": 1,
  "links": [],
+<<<<<<< HEAD
  "modified": "2024-12-30 16:38:36.246946",
+=======
+ "modified": "2024-12-31 11:57:49.013233",
+>>>>>>> 181d8e7fcbb792b4abaa5e212a0b8249e1bb5c93
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Property",

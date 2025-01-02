@@ -196,6 +196,11 @@ doc_events = {
             "propms.issue_hook.validate",
         ],
     },
+   # "Property": {
+    #    "after_insert": [
+     #       "propms.for_canellation.after_save",
+      #      ],
+       # },
     "Material Request": {
         "validate": "propms.auto_custom.makeSalesInvoice",
         "on_update": "propms.auto_custom.makeSalesInvoice",
