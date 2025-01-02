@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:DONE-{#####}",
  "creation": "2024-12-18 16:51:28.058855",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -8,58 +9,68 @@
   "property",
   "final_price",
   "commission",
+  "seller_commission",
   "sales_person",
-  "payment_plan",
-  "details",
-  "tst2"
+  "reservation_form",
+  "notes"
  ],
  "fields": [
   {
    "fieldname": "final_price",
    "fieldtype": "Int",
-   "label": "Final Price"
+   "in_list_view": 1,
+   "label": "Final Price",
+   "reqd": 1
   },
   {
    "fieldname": "commission",
    "fieldtype": "Int",
-   "label": "Commission"
-  },
-  {
-   "fieldname": "details",
-   "fieldtype": "Long Text",
-   "label": "Feedback"
+   "label": "Buyer Commission"
   },
   {
    "fieldname": "property",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Property",
    "link_filters": "[[\"Property\",\"is_group\",\"=\",0]]",
-   "options": "Property"
-  },
-  {
-   "fieldname": "tst2",
-   "fieldtype": "Data",
-   "label": "tst2"
+   "options": "Property",
+   "reqd": 1
   },
   {
    "fieldname": "sales_person",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Sales Person",
-   "link_filters": "[[\"User\",\"role\",\"=\",\"Sales User\"]]",
-   "options": "User"
+   "link_filters": "[[\"User\",\"role_profile_name\",\"=\",\"Sales\"]]",
+   "options": "User",
+   "reqd": 1
   },
   {
-   "fieldname": "payment_plan",
-   "fieldtype": "Data",
-   "label": "Payment Plan"
+   "fieldname": "seller_commission",
+   "fieldtype": "Int",
+   "label": "Seller Commission"
+  },
+  {
+   "fieldname": "reservation_form",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Reservation Form",
+   "link_filters": "[[\"Reservation form\",\"status\",\"=\",\"Reservation\"]]",
+   "options": "Reservation form"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Long Text",
+   "label": "Notes"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-25 12:09:17.930804",
+ "modified": "2025-01-01 11:36:14.429803",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Deal Is Done",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -70,7 +81,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "System Manager",
+   "role": "Sales User",
    "share": 1,
    "write": 1
   }
