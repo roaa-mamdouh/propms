@@ -24,8 +24,8 @@
  {
   "docstatus": 0,
   "doctype": "Custom HTML Block",
-  "html": "<nav>\n   <label for=\"touch\"><span>Setup</span></label>               \n   <input type=\"checkbox\" id=\"touch\"> \n\n   <ul class=\"slide\">\n      <li><a href=\"#property\" onclick=\"openDocType('Property')\">Property</a></li>\n      <li><a href=\"#unit\" onclick=\"openDocType('Unit')\">Unit</a></li>\n      <li><a href=\"#unit-type\" onclick=\"openDocType('Unit Type')\">Unit Type</a></li>\n      \n   </ul>\n</nav> \n",
-  "modified": "2024-12-29 10:37:42.116357",
+  "html": "<nav>\n   <label for=\"touch\"><span>Setup</span></label>               \n   <input type=\"checkbox\" id=\"touch\"> \n\n   <ul class=\"slide\">\n      <li><a href=\"#property\" onclick=\"openDocType('Property')\">Property</a></li>\n      <li><a href=\"#unit\" onclick=\"openDocType('Unit')\">Unit</a></li>\n      <li><a href=\"#reservation-form\" onclick=\"openDocType('Reservation form')\">Reservation Form</a></li>\n      <li><a href=\"#unit-type\" onclick=\"openDocType('Unit Type')\">Unit Type</a></li>\n      \n   </ul>\n</nav> ",
+  "modified": "2024-12-29 11:03:35.138070",
   "name": "Drop Menu",
   "private": 0,
   "roles": [],
