@@ -17,7 +17,8 @@
   "sales_person",
   "sale",
   "price",
-  "reservation_date"
+  "reservation_date",
+  "reservation_form"
  ],
  "fields": [
   {
@@ -74,7 +75,8 @@
   {
    "fieldname": "national_id",
    "fieldtype": "Attach",
-   "label": "National ID"
+   "label": "National ID",
+   "reqd": 1
   },
   {
    "fieldname": "sales_person",
@@ -86,10 +88,16 @@
    "fieldname": "reservation_date",
    "fieldtype": "Date",
    "label": "Date"
+  },
+  {
+   "fieldname": "reservation_form",
+   "fieldtype": "Link",
+   "label": "Reservation Form",
+   "options": "Reservation form"
   }
  ],
  "links": [],
- "modified": "2024-12-18 16:34:21.051489",
+ "modified": "2025-01-03 11:55:03.905822",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Reservation",

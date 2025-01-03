@@ -264,12 +264,6 @@
             "read_only": 1
         },
         {
-            "fieldname": "parent_property",
-            "fieldtype": "Link",
-            "label": "Parent property",
-            "options": "Property"
-        },
-        {
             "fieldname": "finishing",
             "fieldtype": "Select",
             "label": "Finishing",
