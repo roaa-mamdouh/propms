@@ -28,7 +28,6 @@
   "national_id",
   "social_status",
   "job_or_profession",
-  "status",
   "reservation_details_section",
   "price_per_meter",
   "unit_price",
@@ -41,7 +40,8 @@
   "total_number_of_installment",
   "start_date_of_installment",
   "end_date",
-  "total_amount_paid"
+  "total_amount_paid",
+  "status"
  ],
  "fields": [
   {
@@ -258,6 +258,7 @@
    "allow_on_submit": 1,
    "fieldname": "statuss",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "Statuss",
    "options": "Waiting for Approval\nDraft\nApproved\nRejected",
    "read_only": 1
@@ -266,7 +267,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-02 14:49:04.853653",
+ "modified": "2025-01-03 11:32:27.452330",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Reservation form",

@@ -262,9 +262,9 @@ fixtures = [
     {"dt": "Workflow"},
     {"dt": "Workflow State"},
     {"dt": "Workflow Action"},
-    {"dt": "Custom Field"},
-    {"dt": "Property Setter"},
-    {"dt": "Reservation form"}  
+#    {"dt": "Custom Field"},
+#    {"dt": "Property Setter"},
+#    {"dt": "Reservation form"}  
 ]
 
     
