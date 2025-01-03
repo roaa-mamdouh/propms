@@ -1,487 +1,486 @@
 {
-    "actions": [],
-    "allow_import": 1,
-    "allow_rename": 1,
-    "autoname": "field:name1",
-    "color": "#ff0102",
-    "creation": "2018-11-22 23:15:45.736517",
-    "doctype": "DocType",
-    "document_type": "Document",
-    "editable_grid": 1,
-    "engine": "InnoDB",
-    "field_order": [
-        "identification_section",
-        "name1",
-        "is_group",
-        "category",
-        "facilities",
-        "column_break_2",
-        "photo",
-        "company",
-        "garage_price",
-        "cost_center",
-        "section_break_4",
-        "unit_owner",
-        "type",
-        "nymber_of_rooms",
-        "column_break_9",
-        "bedroom",
-        "master_bedroom",
-        "common_bathroom",
-        "section_break_13",
-        "builtup_area",
-        "storage_area",
-        "facing",
-        "no_of_parking",
-        "city",
-        "district",
-        "developer",
-        "building_number",
-        "floor_number",
-        "unit_number",
-        "column_break_18",
-        "payment_type",
-        "security_deposit",
-        "smoking",
-        "finishing",
-        "furishing",
-        "status",
-        "for_cancellation",
-        "price_per_month_day",
-        "price_per_meter",
-        "total_price",
-        "section_break_22",
-        "unit_assets",
-        "column_break_24",
-        "amenity_name",
-        "description_section",
-        "description",
-        "lft",
-        "rgt",
-        "old_parent",
-        "attach",
-        "latitude",
-        "longitude",
-        "location",
-        "parent_property"
-    ],
-    "fields": [
-        {
-            "bold": 1,
-            "fieldname": "identification_section",
-            "fieldtype": "Section Break",
-            "label": "IDENTIFICATION"
-        },
-        {
-            "fieldname": "name1",
-            "fieldtype": "Data",
-            "label": "Name",
-            "reqd": 1,
-            "unique": 1
-        },
-        {
-            "fieldname": "parent_property",
-            "fieldtype": "Link",
-            "label": "Parent property",
-            "options": "Property"
-        },
-        {
-            "fieldname": "column_break_2",
-            "fieldtype": "Column Break"
-        },
-        {
-            "fieldname": "photo",
-            "fieldtype": "Attach Image",
-            "hidden": 1,
-            "label": "Photo"
-        },
-        {
-            "bold": 1,
-            "depends_on": "eval: doc.is_group == 0",
-            "fieldname": "section_break_4",
-            "fieldtype": "Section Break",
-            "label": "UNIT CHARACTERISTICS"
-        },
-        {
-            "fieldname": "unit_owner",
-            "fieldtype": "Link",
-            "label": "Unit Owner",
-            "options": "Customer"
-        },
-        {
-            "fieldname": "type",
-            "fieldtype": "Link",
-            "label": "Type",
-            "options": "Unit Type"
-        },
-        {
-            "fieldname": "column_break_9",
-            "fieldtype": "Column Break"
-        },
-        {
-            "fieldname": "bedroom",
-            "fieldtype": "Int",
-            "label": "Bedroom"
-        },
-        {
-            "fieldname": "master_bedroom",
-            "fieldtype": "Int",
-            "label": "Master bedroom"
-        },
-        {
-            "fieldname": "common_bathroom",
-            "fieldtype": "Int",
-            "label": "Common bathroom"
-        },
-        {
-            "bold": 1,
-            "collapsible": 1,
-            "depends_on": "eval: doc.is_group == 0",
-            "fieldname": "section_break_13",
-            "fieldtype": "Section Break",
-            "label": "UNIT DETAILS"
-        },
-        {
-            "fieldname": "builtup_area",
-            "fieldtype": "Float",
-            "label": "Builtup area"
-        },
-        {
-            "fieldname": "facing",
-            "fieldtype": "Select",
-            "label": "Facing",
-            "options": "North\nNorth-East\nEast\nSouth-East\nWest\nNorth-West\nSouth-West\nSouth"
-        },
-        {
-            "fieldname": "no_of_parking",
-            "fieldtype": "Int",
-            "label": "No of parking"
-        },
-        {
-            "fieldname": "column_break_18",
-            "fieldtype": "Column Break"
-        },
-        {
-            "fieldname": "security_deposit",
-            "fieldtype": "Currency",
-            "label": "Security Deposit",
-            "permlevel": 2
-        },
-        {
-            "default": "0",
-            "fieldname": "smoking",
-            "fieldtype": "Check",
-            "label": "Smoking"
-        },
-        {
-            "fieldname": "status",
-            "fieldtype": "Select",
-            "in_filter": 1,
-            "in_list_view": 1,
-            "in_standard_filter": 1,
-            "label": "Status",
-            "options": "On Sale\nOn Lease\nReserved\nOff lease in 3 months\nLeased\nSold\nRemoved",
-            "reqd": 1
-        },
-        {
-            "bold": 1,
-            "collapsible": 1,
-            "depends_on": "eval: doc.is_group == 0",
-            "fieldname": "section_break_22",
-            "fieldtype": "Section Break",
-            "label": "MORE INFORMATION"
-        },
-        {
-            "fieldname": "unit_assets",
-            "fieldtype": "Table",
-            "label": "Unit Assets",
-            "options": "Unit Assets"
-        },
-        {
-            "fieldname": "column_break_24",
-            "fieldtype": "Column Break"
-        },
-        {
-            "fieldname": "amenity_name",
-            "fieldtype": "Table",
-            "label": "Amenity Name",
-            "options": "Property Amenity"
-        },
-        {
-            "depends_on": "eval: doc.is_group == 0",
-            "fieldname": "description_section",
-            "fieldtype": "Section Break"
-        },
-        {
-            "fieldname": "description",
-            "fieldtype": "Text",
-            "label": "DESCRIPTION"
-        },
-        {
-            "fieldname": "cost_center",
-            "fieldtype": "Link",
-            "hidden": 1,
-            "label": "Cost Center",
-            "options": "Cost Center"
-        },
-        {
-            "fieldname": "company",
-            "fieldtype": "Link",
-            "label": "Company",
-            "options": "Company",
-            "reqd": 1
-        },
-        {
-            "fieldname": "lft",
-            "fieldtype": "Int",
-            "hidden": 1,
-            "label": "Left",
-            "no_copy": 1,
-            "read_only": 1
-        },
-        {
-            "fieldname": "rgt",
-            "fieldtype": "Int",
-            "hidden": 1,
-            "label": "Right",
-            "no_copy": 1,
-            "read_only": 1
-        },
-        {
-            "default": "1",
-            "fieldname": "is_group",
-            "fieldtype": "Check",
-            "in_filter": 1,
-            "in_standard_filter": 1,
-            "label": "Project"
-        },
-        {
-            "fieldname": "old_parent",
-            "fieldtype": "Link",
-            "hidden": 1,
-            "label": "Old Parent",
-            "options": "Property",
-            "read_only": 1
-        },
-        {
-            "fieldname": "finishing",
-            "fieldtype": "Select",
-            "label": "Finishing",
-            "options": "Fully Finished\nSemi Finished\nUnfinished"
-        },
-        {
-            "fieldname": "furishing",
-            "fieldtype": "Select",
-            "label": "Furishing",
-            "options": "Fully Furnished\nSemi Furnished\nUnfurnished"
-        },
-        {
-            "depends_on": "eval:doc.status === \"On Lease\"",
-            "fieldname": "price_per_month_day",
-            "fieldtype": "Int",
-            "hidden": 1,
-            "label": "Price per month/day",
-            "mandatory_depends_on": "eval:doc.status === \"On Lease\""
-        },
-        {
-            "depends_on": "eval:doc.status === \"On Sale\"",
-            "fieldname": "price_per_meter",
-            "fieldtype": "Int",
-            "hidden": 1,
-            "label": "Price per meter",
-            "mandatory_depends_on": "eval:doc.status === \"On Sale\""
-        },
-        {
-            "fieldname": "category",
-            "fieldtype": "Table MultiSelect",
-            "label": "Category",
-            "options": "Project Category"
-        },
-        {
-            "fieldname": "payment_type",
-            "fieldtype": "Select",
-            "label": "Payment Type",
-            "options": "Cash\nInstallments\nCash or Installments"
-        },
-        {
-            "fieldname": "nymber_of_rooms",
-            "fieldtype": "Int",
-            "label": "Number Of Rooms"
-        },
-        {
-            "fieldname": "city",
-            "fieldtype": "Data",
-            "in_filter": 1,
-            "in_list_view": 1,
-            "in_standard_filter": 1,
-            "label": "City"
-        },
-        {
-            "fieldname": "district",
-            "fieldtype": "Data",
-            "label": "District"
-        },
-        {
-            "fieldname": "developer",
-            "fieldtype": "Data",
-            "label": "Developer"
-        },
-        {
-            "fieldname": "building_number",
-            "fieldtype": "Data",
-            "label": "Building Number"
-        },
-        {
-            "fieldname": "floor_number",
-            "fieldtype": "Data",
-            "label": "Floor Number"
-        },
-        {
-            "fieldname": "unit_number",
-            "fieldtype": "Data",
-            "label": "Unit Number"
-        },
-        {
-            "fieldname": "total_price",
-            "fieldtype": "Int",
-            "label": "Total Price"
-        },
-        {
-            "fieldname": "attach",
-            "fieldtype": "Attach",
-            "label": "attach"
-        },
-        {
-            "fieldname": "location",
-            "fieldtype": "Geolocation",
-            "label": "Location"
-        },
-        {
-            "fieldname": "storage_area",
-            "fieldtype": "Float",
-            "label": "Storage area"
-        },
-        {
-            "fieldname": "latitude",
-            "fieldtype": "Data",
-            "label": "Latitude"
-        },
-        {
-            "fieldname": "longitude",
-            "fieldtype": "Data",
-            "label": "Longitude"
-        },
-        {
-            "default": "Available",
-            "fieldname": "for_cancellation",
-            "fieldtype": "Select",
-            "hidden": 1,
-            "label": "For Cancellation",
-            "options": "Available\nOn Sale\nOn Lease\nReserved\nOff lease in 3 months\nLeased\nSold\nRemoved"
-        },
-        {
-            "fieldname": "facilities",
-            "fieldtype": "Table MultiSelect",
-            "label": "Facilities",
-            "options": "Project Facility"
-        },
-        {
-            "fieldname": "garage_price",
-            "fieldtype": "Int",
-            "hidden": 1,
-            "label": "Garage Price"
-        }
-    ],
-    "icon": "octicon octicon-home",
-    "image_field": "photo",
-    "is_tree": 1,
-    "links": [],
-    "modified": "2024-12-31 11:57:49.013233",
-    "modified_by": "Administrator",
-    "module": "Property Management Solution",
-    "name": "Property",
-    "naming_rule": "By fieldname",
-    "nsm_parent_field": "parent_property",
-    "owner": "Administrator",
-    "permissions": [
-        {
-            "create": 1,
-            "delete": 1,
-            "email": 1,
-            "export": 1,
-            "print": 1,
-            "read": 1,
-            "report": 1,
-            "role": "System Manager",
-            "share": 1,
-            "write": 1
-        },
-        {
-            "delete": 1,
-            "email": 1,
-            "export": 1,
-            "permlevel": 2,
-            "print": 1,
-            "read": 1,
-            "report": 1,
-            "role": "System Manager",
-            "share": 1,
-            "write": 1
-        },
-        {
-            "email": 1,
-            "export": 1,
-            "print": 1,
-            "read": 1,
-            "report": 1,
-            "role": "Floor Maintenance Supervisor",
-            "share": 1
-        },
-        {
-            "email": 1,
-            "export": 1,
-            "print": 1,
-            "read": 1,
-            "report": 1,
-            "role": "Maintenance Job in-charge",
-            "share": 1
-        },
-        {
-            "email": 1,
-            "export": 1,
-            "print": 1,
-            "read": 1,
-            "report": 1,
-            "role": "Maintenance Manager",
-            "share": 1
-        },
-        {
-            "delete": 1,
-            "email": 1,
-            "export": 1,
-            "permlevel": 2,
-            "print": 1,
-            "read": 1,
-            "report": 1,
-            "role": "Property Manager",
-            "share": 1,
-            "write": 1
-        },
-        {
-            "create": 1,
-            "delete": 1,
-            "email": 1,
-            "export": 1,
-            "print": 1,
-            "read": 1,
-            "report": 1,
-            "role": "Property Manager",
-            "share": 1,
-            "write": 1
-        }
-    ],
-    "sort_field": "modified",
-    "sort_order": "DESC",
-    "states": [],
-    "track_changes": 1
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:name1",
+ "color": "#ff0102",
+ "creation": "2018-11-22 23:15:45.736517",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "identification_section",
+  "name1",
+  "is_group",
+  "category",
+  "facilities",
+  "column_break_2",
+  "photo",
+  "company",
+  "garage_price",
+  "cost_center",
+  "section_break_4",
+  "unit_owner",
+  "type",
+  "nymber_of_rooms",
+  "column_break_9",
+  "bedroom",
+  "master_bedroom",
+  "common_bathroom",
+  "section_break_13",
+  "builtup_area",
+  "storage_area",
+  "facing",
+  "no_of_parking",
+  "city",
+  "district",
+  "developer",
+  "building_number",
+  "floor_number",
+  "unit_number",
+  "column_break_18",
+  "payment_type",
+  "security_deposit",
+  "smoking",
+  "finishing",
+  "furishing",
+  "status",
+  "for_cancellation",
+  "price_per_month_day",
+  "price_per_meter",
+  "total_price",
+  "section_break_22",
+  "unit_assets",
+  "column_break_24",
+  "amenity_name",
+  "description_section",
+  "description",
+  "lft",
+  "rgt",
+  "old_parent",
+  "attach",
+  "latitude",
+  "longitude",
+  "location",
+  "parent_property"
+ ],
+ "fields": [
+  {
+   "bold": 1,
+   "fieldname": "identification_section",
+   "fieldtype": "Section Break",
+   "label": "IDENTIFICATION"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "parent_property",
+   "fieldtype": "Link",
+   "label": "Parent property",
+   "options": "Property"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "photo",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Photo"
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval: doc.is_group == 0",
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break",
+   "label": "UNIT CHARACTERISTICS"
+  },
+  {
+   "fieldname": "unit_owner",
+   "fieldtype": "Link",
+   "label": "Unit Owner",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Link",
+   "label": "Type",
+   "options": "Unit Type"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bedroom",
+   "fieldtype": "Int",
+   "label": "Bedroom"
+  },
+  {
+   "fieldname": "master_bedroom",
+   "fieldtype": "Int",
+   "label": "Master bedroom"
+  },
+  {
+   "fieldname": "common_bathroom",
+   "fieldtype": "Int",
+   "label": "Common bathroom"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "depends_on": "eval: doc.is_group == 0",
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break",
+   "label": "UNIT DETAILS"
+  },
+  {
+   "fieldname": "builtup_area",
+   "fieldtype": "Float",
+   "label": "Builtup area"
+  },
+  {
+   "fieldname": "facing",
+   "fieldtype": "Select",
+   "label": "Facing",
+   "options": "North\nNorth-East\nEast\nSouth-East\nWest\nNorth-West\nSouth-West\nSouth"
+  },
+  {
+   "fieldname": "no_of_parking",
+   "fieldtype": "Int",
+   "label": "No of parking"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "security_deposit",
+   "fieldtype": "Currency",
+   "label": "Security Deposit",
+   "permlevel": 2
+  },
+  {
+   "default": "0",
+   "fieldname": "smoking",
+   "fieldtype": "Check",
+   "label": "Smoking"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "depends_on": "eval: doc.is_group == 0",
+   "fieldname": "section_break_22",
+   "fieldtype": "Section Break",
+   "label": "MORE INFORMATION"
+  },
+  {
+   "fieldname": "unit_assets",
+   "fieldtype": "Table",
+   "label": "Unit Assets",
+   "options": "Unit Assets"
+  },
+  {
+   "fieldname": "column_break_24",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amenity_name",
+   "fieldtype": "Table",
+   "label": "Amenity Name",
+   "options": "Property Amenity"
+  },
+  {
+   "depends_on": "eval: doc.is_group == 0",
+   "fieldname": "description_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "DESCRIPTION"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "in_filter": 1,
+   "in_standard_filter": 1,
+   "label": "Project"
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Old Parent",
+   "options": "Property",
+   "read_only": 1
+  },
+  {
+   "fieldname": "finishing",
+   "fieldtype": "Select",
+   "label": "Finishing",
+   "options": "Fully Finished\nSemi Finished\nUnfinished"
+  },
+  {
+   "fieldname": "furishing",
+   "fieldtype": "Select",
+   "label": "Furishing",
+   "options": "Fully Furnished\nSemi Furnished\nUnfurnished"
+  },
+  {
+   "depends_on": "eval:doc.status === \"On Lease\"",
+   "fieldname": "price_per_month_day",
+   "fieldtype": "Int",
+   "label": "Price per month/day",
+   "mandatory_depends_on": "eval:doc.status === \"On Lease\""
+  },
+  {
+   "depends_on": "eval:doc.status === \"On Sale\"",
+   "fieldname": "price_per_meter",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Price per meter",
+   "mandatory_depends_on": "eval:doc.status === \"On Sale\""
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Table MultiSelect",
+   "label": "Category",
+   "options": "Project Category"
+  },
+  {
+   "fieldname": "payment_type",
+   "fieldtype": "Select",
+   "label": "Payment Type",
+   "options": "Cash\nInstallments\nCash or Installments"
+  },
+  {
+   "fieldname": "nymber_of_rooms",
+   "fieldtype": "Int",
+   "label": "Number Of Rooms"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "City"
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Data",
+   "label": "District"
+  },
+  {
+   "fieldname": "developer",
+   "fieldtype": "Data",
+   "label": "Developer"
+  },
+  {
+   "fieldname": "building_number",
+   "fieldtype": "Data",
+   "label": "Building Number"
+  },
+  {
+   "fieldname": "floor_number",
+   "fieldtype": "Data",
+   "label": "Floor Number"
+  },
+  {
+   "fieldname": "unit_number",
+   "fieldtype": "Data",
+   "label": "Unit Number"
+  },
+  {
+   "fieldname": "total_price",
+   "fieldtype": "Int",
+   "label": "Total Price"
+  },
+  {
+   "fieldname": "attach",
+   "fieldtype": "Attach",
+   "label": "attach"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Geolocation",
+   "label": "Location"
+  },
+  {
+   "fieldname": "storage_area",
+   "fieldtype": "Float",
+   "label": "Storage area"
+  },
+  {
+   "fieldname": "latitude",
+   "fieldtype": "Data",
+   "label": "Latitude"
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Data",
+   "label": "Longitude"
+  },
+  {
+   "default": "Available",
+   "fieldname": "for_cancellation",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "For Cancellation",
+   "options": "Available\nOn Sale\nOn Lease\nReserved\nOff lease in 3 months\nLeased\nSold\nRemoved"
+  },
+  {
+   "fieldname": "facilities",
+   "fieldtype": "Table MultiSelect",
+   "label": "Facilities",
+   "options": "Project Facility"
+  },
+  {
+   "fieldname": "garage_price",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Garage Price"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "On Lease\nOn Sale\nReserved\nOff lease in 3 months\nLeased\nSold\nRemoved",
+   "reqd": 1
+  }
+ ],
+ "icon": "octicon octicon-home",
+ "image_field": "photo",
+ "is_tree": 1,
+ "links": [],
+ "modified": "2025-01-03 23:39:22.439584",
+ "modified_by": "Administrator",
+ "module": "Property Management Solution",
+ "name": "Property",
+ "naming_rule": "By fieldname",
+ "nsm_parent_field": "parent_property",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 2,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Floor Maintenance Supervisor",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Maintenance Job in-charge",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Maintenance Manager",
+   "share": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 2,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Property Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Property Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
 }
