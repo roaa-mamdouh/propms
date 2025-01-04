@@ -255,17 +255,12 @@ fixtures = [
  ]},
     {"dt": "Facilities"},
     {"dt": "Category"},
-
-]
-
-fixtures = [
     {"dt": "Workflow"},
     {"dt": "Workflow State"},
     {"dt": "Workflow Action"},
-#    {"dt": "Custom Field"},
-#    {"dt": "Property Setter"},
-#    {"dt": "Reservation form"}  
+
 ]
+
 
     
 

@@ -22,17 +22,20 @@
   {
    "fieldname": "reservations",
    "fieldtype": "Int",
-   "label": "Reservations"
+   "label": "Reservations",
+   "read_only": 1
   },
   {
    "fieldname": "done_deal",
    "fieldtype": "Int",
-   "label": "Done Deal"
+   "label": "Done Deal",
+   "read_only": 1
   },
   {
    "fieldname": "potential",
    "fieldtype": "Int",
-   "label": "Potential"
+   "label": "Potential",
+   "read_only": 1
   },
   {
    "default": "User",
@@ -44,26 +47,13 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-16 12:29:28.383112",
+ "modified": "2025-01-04 11:45:06.056006",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Target",
  "naming_rule": "Expression",
  "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "All",
-   "share": 1,
-   "write": 1
-  }
- ],
+ "permissions": [],
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

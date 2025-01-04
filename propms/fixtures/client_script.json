@@ -2,6 +2,17 @@
  {
   "docstatus": 0,
   "doctype": "Client Script",
+  "dt": "Property",
+  "enabled": 0,
+  "modified": "2025-01-03 23:43:46.472089",
+  "module": "Property Management Solution",
+  "name": "On lease price",
+  "script": "frappe.ui.form.on('Property', {\n    after_insert: function(frm) {\n        if (frm.doc.status === \"On Lease\" && frm.doc.price_per_month_day) {\n            const total_price = 40 * frm.doc.price_per_month_day;\n\n            frappe.call({\n                method: \"frappe.client.set_value\",\n                args: {\n                    doctype: \"Property\",\n                    name: frm.doc.name,\n                    fieldname: \"total_price\",\n                    value: total_price\n                },\n                callback: function(response) {\n                    if (response.message) {\n                        frappe.msgprint({\n                            title: __('Success'),\n                            message: __('Total price has been updated to: ') + total_price,\n                            indicator: 'green'\n                        });\n                        frm.reload_doc(); // Reload the form to reflect changes\n                    }\n                }\n            });\n        }\n    }\n});\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
   "dt": "Dashboard Chart",
   "enabled": 1,
   "modified": "2024-12-17 17:20:32.423010",
