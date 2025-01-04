@@ -37,7 +37,7 @@
   "doctype": "Client Script",
   "dt": "Unit",
   "enabled": 1,
-  "modified": "2024-12-05 13:40:39.909585",
+  "modified": "2025-01-04 17:30:48.590926",
   "module": "Property Management Solution",
   "name": "Unit Rent or Sale?",
   "script": "frappe.ui.form.on('Unit', {\n\tstatus: function (frm) {\n        if (frm.doc.status === 'On Lease' || frm.doc.status === 'Off Lease in 3 Months') {\n            // Show \"price per month/day\"\n            frm.set_df_property('price_per_month_day', 'hidden', 0);\n            frm.set_df_property('price_per_meter', 'hidden', 1);\n        } else if (frm.doc.status === 'On Sale' || frm.doc.status === 'Sold' || frm.doc.status === 'Managed for customer') {\n            // Show \"price per meter\"\n            frm.set_df_property('price_per_month_day', 'hidden', 1);\n            frm.set_df_property('price_per_meter', 'hidden', 0);\n        } else {\n            // Hide both if no match\n            frm.set_df_property('price_per_month_day', 'hidden', 1);\n            frm.set_df_property('price_per_meter', 'hidden', 1);\n        }\n    }\n})",

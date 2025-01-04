@@ -2,7 +2,6 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "field:name1",
  "color": "#ff0102",
  "creation": "2018-11-22 23:15:45.736517",
  "doctype": "DocType",
@@ -13,6 +12,7 @@
   "identification_section",
   "name1",
   "is_group",
+  "parent_property",
   "category",
   "facilities",
   "floors",
@@ -22,7 +22,6 @@
   "company",
   "garage_price",
   "cost_center",
-  "project_city",
   "section_break_4",
   "unit_owner",
   "type",
@@ -32,22 +31,24 @@
   "master_bedroom",
   "common_bathroom",
   "section_break_13",
+  "column_break_jrka",
   "builtup_area",
-  "storage_area",
+  "land_area_m",
   "facing",
   "no_of_parking",
   "city",
   "district",
   "developer",
   "building_number",
-  "floor_number",
   "unit_number",
+  "floor_number",
   "column_break_18",
-  "payment_type",
   "security_deposit",
   "smoking",
+  "storage_area",
   "finishing",
   "furishing",
+  "payment_type",
   "status",
   "for_cancellation",
   "price_per_month_day",
@@ -65,8 +66,7 @@
   "attach",
   "latitude",
   "longitude",
-  "location",
-  "parent_property"
+  "location"
  ],
  "fields": [
   {
@@ -79,13 +79,14 @@
    "fieldname": "name1",
    "fieldtype": "Data",
    "label": "Name",
-   "reqd": 1,
+   "mandatory_depends_on": "eval: doc.is_group == 1",
    "unique": 1
   },
   {
    "fieldname": "parent_property",
    "fieldtype": "Link",
    "label": "Parent property",
+   "mandatory_depends_on": "eval: doc.is_group == 1",
    "options": "Property"
   },
   {
@@ -138,7 +139,6 @@
   {
    "bold": 1,
    "collapsible": 1,
-   "depends_on": "eval: doc.is_group == 0",
    "fieldname": "section_break_13",
    "fieldtype": "Section Break",
    "label": "UNIT DETAILS"
@@ -146,7 +146,7 @@
   {
    "fieldname": "builtup_area",
    "fieldtype": "Float",
-   "label": "Builtup area"
+   "label": "Builtup area (m)"
   },
   {
    "fieldname": "facing",
@@ -160,10 +160,12 @@
    "label": "No of parking"
   },
   {
+   "depends_on": "eval: doc.is_group == 0",
    "fieldname": "column_break_18",
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval: doc.is_group == 0",
    "fieldname": "security_deposit",
    "fieldtype": "Currency",
    "label": "Security Deposit",
@@ -171,6 +173,7 @@
   },
   {
    "default": "0",
+   "depends_on": "eval: doc.is_group == 0",
    "fieldname": "smoking",
    "fieldtype": "Check",
    "label": "Smoking"
@@ -256,26 +259,28 @@
    "read_only": 1
   },
   {
+   "depends_on": "eval: doc.is_group == 0",
    "fieldname": "finishing",
    "fieldtype": "Select",
    "label": "Finishing",
    "options": "Fully Finished\nSemi Finished\nUnfinished"
   },
   {
+   "depends_on": "eval: doc.is_group == 0",
    "fieldname": "furishing",
    "fieldtype": "Select",
    "label": "Furishing",
    "options": "Fully Furnished\nSemi Furnished\nUnfurnished"
   },
   {
-   "depends_on": "eval:doc.status === \"On Lease\"",
+   "depends_on": "eval:doc.status === \"On Lease\" && doc.is_group == 0",
    "fieldname": "price_per_month_day",
    "fieldtype": "Int",
    "label": "Price per month/day",
    "mandatory_depends_on": "eval:doc.status === \"On Lease\""
   },
   {
-   "depends_on": "eval:doc.status === \"On Sale\"",
+   "depends_on": "eval:doc.status === \"On Sale\" && doc.is_group == 0",
    "fieldname": "price_per_meter",
    "fieldtype": "Int",
    "label": "Price per meter",
@@ -288,6 +293,7 @@
    "options": "Project Category"
   },
   {
+   "depends_on": "eval: doc.is_group == 0",
    "fieldname": "payment_type",
    "fieldtype": "Select",
    "label": "Payment Type",
@@ -322,16 +328,19 @@
    "label": "Building Number"
   },
   {
+   "depends_on": "eval: doc.is_group == 0",
    "fieldname": "floor_number",
    "fieldtype": "Data",
    "label": "Floor Number"
   },
   {
+   "depends_on": "eval: doc.is_group == 0",
    "fieldname": "unit_number",
    "fieldtype": "Data",
    "label": "Unit Number"
   },
   {
+   "depends_on": "eval:doc.status === \"On Sale\" && doc.is_group == 0 && doc.is_group == 0",
    "fieldname": "total_price",
    "fieldtype": "Int",
    "label": "Total Price"
@@ -347,6 +356,7 @@
    "label": "Location"
   },
   {
+   "depends_on": "eval: doc.is_group == 0",
    "fieldname": "storage_area",
    "fieldtype": "Float",
    "label": "Storage area"
@@ -363,6 +373,7 @@
   },
   {
    "default": "Available",
+   "depends_on": "eval: doc.is_group == 0",
    "fieldname": "for_cancellation",
    "fieldtype": "Select",
    "hidden": 1,
@@ -382,6 +393,7 @@
   },
   {
    "default": "Available",
+   "depends_on": "eval: doc.is_group == 0",
    "fieldname": "status",
    "fieldtype": "Select",
    "in_filter": 1,
@@ -402,20 +414,24 @@
    "label": "Number Of Units"
   },
   {
-   "fieldname": "project_city",
+   "fieldname": "column_break_jrka",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "land_area_m",
    "fieldtype": "Data",
-   "label": "Project City"
+   "label": "Land Area (m)"
   }
  ],
  "icon": "octicon octicon-home",
  "image_field": "photo",
  "is_tree": 1,
  "links": [],
- "modified": "2025-01-04 17:34:55.456666",
+ "modified": "2025-01-04 20:44:27.724233",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Property",
- "naming_rule": "By fieldname",
+ "naming_rule": "By script",
  "nsm_parent_field": "parent_property",
  "owner": "Administrator",
  "permissions": [

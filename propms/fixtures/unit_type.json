@@ -1,0 +1,156 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Unit Type",
+  "modified": "2024-11-14 14:18:38.838107",
+  "name": "Office",
+  "unit_type": "Office"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Unit Type",
+  "modified": "2024-11-14 14:18:53.760180",
+  "name": "Shop",
+  "unit_type": "Shop"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Unit Type",
+  "modified": "2024-11-14 14:19:09.803140",
+  "name": "Store",
+  "unit_type": "Store"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Unit Type",
+  "modified": "2024-11-14 14:19:22.174883",
+  "name": "WareHouse",
+  "unit_type": "WareHouse"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Unit Type",
+  "modified": "2024-11-14 14:19:32.247130",
+  "name": "Factory",
+  "unit_type": "Factory"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Unit Type",
+  "modified": "2024-11-14 14:19:43.420048",
+  "name": "Restaurant",
+  "unit_type": "Restaurant"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Unit Type",
+  "modified": "2024-11-14 14:19:57.906117",
+  "name": "Clinic",
+  "unit_type": "Clinic"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Unit Type",
+  "modified": "2024-11-14 14:20:10.971375",
+  "name": "Pharmacy",
+  "unit_type": "Pharmacy"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Unit Type",
+  "modified": "2024-11-14 14:20:26.627789",
+  "name": "Medical Facility",
+  "unit_type": "Medical Facility"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Unit Type",
+  "modified": "2024-11-14 14:20:41.440051",
+  "name": "Apartment",
+  "unit_type": "Apartment"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Unit Type",
+  "modified": "2024-11-14 14:20:59.636395",
+  "name": "Town House",
+  "unit_type": "Town House"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Unit Type",
+  "modified": "2024-11-14 14:21:16.467553",
+  "name": "Twin House",
+  "unit_type": "Twin House"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Unit Type",
+  "modified": "2024-11-14 14:21:31.699756",
+  "name": "Penthouse",
+  "unit_type": "Penthouse"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Unit Type",
+  "modified": "2024-11-14 14:21:51.478295",
+  "name": "Standalone Villa",
+  "unit_type": "Standalone Villa"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Unit Type",
+  "modified": "2024-11-14 14:22:06.696107",
+  "name": "Land",
+  "unit_type": "Land"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Unit Type",
+  "modified": "2024-11-14 14:22:21.101548",
+  "name": "Full Floor",
+  "unit_type": "Full Floor"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Unit Type",
+  "modified": "2024-11-14 14:22:35.936119",
+  "name": "Half Floor",
+  "unit_type": "Half Floor"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Unit Type",
+  "modified": "2024-11-14 14:22:50.792999",
+  "name": "Show Room",
+  "unit_type": "Show Room"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Unit Type",
+  "modified": "2024-11-14 14:23:03.659520",
+  "name": "Farm",
+  "unit_type": "Farm"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Unit Type",
+  "modified": "2024-11-14 14:23:24.513115",
+  "name": "Hotel Apartment",
+  "unit_type": "Hotel Apartment"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Unit Type",
+  "modified": "2024-11-14 14:23:40.541494",
+  "name": "Bulk Units",
+  "unit_type": "Bulk Units"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Unit Type",
+  "modified": "2024-11-14 14:23:50.695430",
+  "name": "Duplex",
+  "unit_type": "Duplex"
+ }
+]
