@@ -15,11 +15,14 @@
   "is_group",
   "category",
   "facilities",
+  "floors",
+  "number_of_units",
   "column_break_2",
   "photo",
   "company",
   "garage_price",
   "cost_center",
+  "project_city",
   "section_break_4",
   "unit_owner",
   "type",
@@ -92,7 +95,6 @@
   {
    "fieldname": "photo",
    "fieldtype": "Attach Image",
-   "hidden": 1,
    "label": "Photo"
   },
   {
@@ -276,7 +278,6 @@
    "depends_on": "eval:doc.status === \"On Sale\"",
    "fieldname": "price_per_meter",
    "fieldtype": "Int",
-   "hidden": 1,
    "label": "Price per meter",
    "mandatory_depends_on": "eval:doc.status === \"On Sale\""
   },
@@ -377,25 +378,40 @@
   {
    "fieldname": "garage_price",
    "fieldtype": "Int",
-   "hidden": 1,
    "label": "Garage Price"
   },
   {
+   "default": "Available",
    "fieldname": "status",
    "fieldtype": "Select",
    "in_filter": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Status",
-   "options": "On Lease\nOn Sale\nReserved\nOff lease in 3 months\nLeased\nSold\nRemoved",
+   "options": "Available\nOn Lease\nOn Sale\nReserved\nOff lease in 3 months\nLeased\nSold\nRemoved",
    "reqd": 1
+  },
+  {
+   "fieldname": "floors",
+   "fieldtype": "Int",
+   "label": "Floors"
+  },
+  {
+   "fieldname": "number_of_units",
+   "fieldtype": "Int",
+   "label": "Number Of Units"
+  },
+  {
+   "fieldname": "project_city",
+   "fieldtype": "Data",
+   "label": "Project City"
   }
  ],
  "icon": "octicon octicon-home",
  "image_field": "photo",
  "is_tree": 1,
  "links": [],
- "modified": "2025-01-03 23:39:22.439584",
+ "modified": "2025-01-04 17:34:55.456666",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Property",
