@@ -262,10 +262,6 @@ fixtures = [
 
 ]
 
-
-    
-
-
 # doc_events = {
 # 	"*": {
 # 		"on_update": "method",

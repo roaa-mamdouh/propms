@@ -16,8 +16,7 @@ class Property(NestedSet):
     def autoname(self):
         # If it is a project
         if self.is_group:
-            # Use the Parent Property name as the document name
-            self.name = frappe.db.get_value("Property", self.parent_property, "name") if self.parent_property else "Unnamed Project"
+            self.name = self.name1
         else:
             # If not a project, append the 'name1' field to the Parent Property name
             parent_name = frappe.db.get_value("Property", self.parent_property, "name") if self.parent_property else "Unnamed Property"
