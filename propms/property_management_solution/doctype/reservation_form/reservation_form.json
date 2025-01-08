@@ -127,7 +127,7 @@
    "fieldname": "client_name",
    "fieldtype": "Link",
    "label": "Client Name",
-   "options": "Lead"
+   "options": "CRM Lead"
   },
   {
    "fieldname": "national_id",
@@ -138,7 +138,7 @@
    "reqd": 1
   },
   {
-   "fetch_from": "client_name.mobile_no",
+   "fetch_from": "client_name.phone",
    "fieldname": "phone_number",
    "fieldtype": "Data",
    "label": "Phone No.",
@@ -267,7 +267,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-03 11:32:27.452330",
+ "modified": "2025-01-05 16:54:00.983118",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Reservation form",

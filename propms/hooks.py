@@ -259,6 +259,9 @@ fixtures = [
     {"dt": "Workflow State"},
     {"dt": "Workflow Action"},
     {"dt": "Unit Type"},
+    {"dt": "Property Multiselect"},
+    {"dt": "Units Multiselect"},
+
 
 ]
 

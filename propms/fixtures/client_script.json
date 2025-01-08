@@ -86,5 +86,16 @@
   "name": "For Canellation of property",
   "script": "frappe.ui.form.on('Property', {\n    status: function(frm) {\n        // Check if 'for_cancellation' is empty and 'status' is set\n        if (frm.doc.for_cancellation == \"Available\" && frm.doc.status) {\n            frm.set_value('for_cancellation', frm.doc.status);\n        }\n    }\n});\n",
   "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Property",
+  "enabled": 1,
+  "modified": "2025-01-08 14:04:27.008981",
+  "module": "Property Management Solution",
+  "name": "On Sale price",
+  "script": "frappe.ui.form.on('Property', {\n    after_insert: function(frm) {\n        if (frm.doc.status === \"On Sale\" && frm.doc.price_per_meter) {\n            const total_price = frm.doc.price_per_meter * frm.doc.builtup_area;\n            \n            frappe.call({\n                method: \"frappe.client.set_value\",\n                args: {\n                    doctype: \"Property\",\n                    name: frm.doc.name,\n                    fieldname: \"total_price\",\n                    value: total_price\n                },\n                callback: function(response) {\n                    if (response.message) {\n                        frappe.msgprint({\n                            title: __('Success'),\n                            message: __('Total price has been updated to: ') + total_price,\n                            indicator: 'green'\n                        });\n                        frm.reload_doc(); // Reload the form to reflect changes\n                    }\n                }\n            });\n        }\n    }\n});",
+  "view": "Form"
  }
 ]

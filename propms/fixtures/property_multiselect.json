@@ -1,0 +1,12 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Property Multiselect",
+  "modified": "2025-01-08 14:18:17.338826",
+  "name": "afnfapqf3c",
+  "parent": "CRM-LEAD-2025-00056",
+  "parentfield": "project",
+  "parenttype": "CRM Lead",
+  "project": "tst"
+ }
+]
