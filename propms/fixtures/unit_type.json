@@ -65,13 +65,6 @@
  {
   "docstatus": 0,
   "doctype": "Unit Type",
-  "modified": "2024-11-14 14:20:41.440051",
-  "name": "Apartment",
-  "unit_type": "Apartment"
- },
- {
-  "docstatus": 0,
-  "doctype": "Unit Type",
   "modified": "2024-11-14 14:20:59.636395",
   "name": "Town House",
   "unit_type": "Town House"
@@ -152,5 +145,12 @@
   "modified": "2024-11-14 14:23:50.695430",
   "name": "Duplex",
   "unit_type": "Duplex"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Unit Type",
+  "modified": "2024-11-14 14:20:41.440051",
+  "name": "Apartment",
+  "unit_type": "Apartment"
  }
 ]

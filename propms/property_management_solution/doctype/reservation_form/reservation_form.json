@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:form-{##}",
+ "autoname": "format:RES-{property_name}-{#####}",
  "creation": "2024-12-14 12:33:35.101756",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -16,7 +16,7 @@
   "property_type",
   "finishing",
   "areasqm",
-  "unite_number",
+  "unit_number",
   "building_number",
   "floor_number",
   "how_did_you_hear_about_the_project",
@@ -33,7 +33,6 @@
   "unit_price",
   "facilitie_price",
   "total_price",
-  "statuss",
   "column_break_ugbp",
   "fixed_amount",
   "installments_frequency",
@@ -113,12 +112,6 @@
    "label": "Floor number"
   },
   {
-   "fetch_from": "property_name.unit_number",
-   "fieldname": "unite_number",
-   "fieldtype": "Data",
-   "label": "Unite number"
-  },
-  {
    "fieldname": "client_data",
    "fieldtype": "Heading",
    "label": "Client Data"
@@ -188,7 +181,8 @@
    "fieldname": "fixed_amount",
    "fieldtype": "Percent",
    "label": "Fixed Amount",
-   "non_negative": 1
+   "non_negative": 1,
+   "precision": "1"
   },
   {
    "fieldname": "installments_frequency",
@@ -215,28 +209,36 @@
   {
    "fieldname": "total_amount_paid",
    "fieldtype": "Currency",
-   "label": "Total Amount Paid"
+   "label": "Total Amount Paid",
+   "precision": "0"
   },
   {
    "fetch_from": "property_name.price_per_meter",
    "fieldname": "price_per_meter",
-   "fieldtype": "Int",
-   "label": "Price Per Meter"
+   "fieldtype": "Currency",
+   "label": "Price Per Meter",
+   "precision": "0"
   },
   {
+   "fetch_from": "property_name.unit_price",
    "fieldname": "unit_price",
    "fieldtype": "Currency",
-   "label": "Unit Price"
+   "label": "Unit Price",
+   "precision": "0"
   },
   {
+   "fetch_from": "property_name.total_facilities_price",
    "fieldname": "facilitie_price",
    "fieldtype": "Currency",
-   "label": "Facilitie Price"
+   "label": "Total Facilities Price",
+   "precision": "0"
   },
   {
+   "fetch_from": "property_name.total_price",
    "fieldname": "total_price",
    "fieldtype": "Currency",
-   "label": "Total Price"
+   "label": "Total Price",
+   "precision": "0"
   },
   {
    "allow_on_submit": 1,
@@ -255,19 +257,16 @@
    "read_only": 1
   },
   {
-   "allow_on_submit": 1,
-   "fieldname": "statuss",
-   "fieldtype": "Select",
-   "hidden": 1,
-   "label": "Statuss",
-   "options": "Waiting for Approval\nDraft\nApproved\nRejected",
-   "read_only": 1
+   "fetch_from": "property_name.unit_number",
+   "fieldname": "unit_number",
+   "fieldtype": "Data",
+   "label": "Unit number"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-05 16:54:00.983118",
+ "modified": "2025-01-09 03:08:54.651899",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Reservation form",
