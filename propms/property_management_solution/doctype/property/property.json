@@ -21,10 +21,15 @@
   "cost_center",
   "table_zcpl",
   "total_facilities_price",
+  "project_details_section",
+  "project_builtup_area",
+  "land_area",
+  "column_break_lplk",
+  "project_city",
+  "project_district",
   "section_break_4",
-  "unit_owner",
   "type",
-  "nymber_of_rooms",
+  "number_of_rooms",
   "column_break_9",
   "bedroom",
   "master_bedroom",
@@ -33,20 +38,23 @@
   "column_break_jrka",
   "builtup_area",
   "land_area_m",
-  "facing",
-  "no_of_parking",
   "city",
   "district",
+  "facing",
+  "no_of_parking",
   "developer",
   "building_number",
   "unit_number",
   "floor_number",
   "column_break_18",
   "smoking",
+  "payment_type",
   "storage_area",
   "finishing",
   "furishing",
   "status",
+  "for_cancellation",
+  "price_per_month_day",
   "price_per_meter",
   "unit_price",
   "total_price",
@@ -75,14 +83,16 @@
    "fieldname": "name1",
    "fieldtype": "Data",
    "label": "Name",
-   "mandatory_depends_on": "eval: doc.is_group == 1",
+   "reqd": 1,
    "unique": 1
   },
   {
+   "depends_on": "eval: doc.is_group == 0",
    "fieldname": "parent_property",
    "fieldtype": "Link",
    "label": "Parent property",
-   "mandatory_depends_on": "eval: doc.is_group == 1",
+   "link_filters": "[[\"Property\",\"is_group\",\"=\",1]]",
+   "mandatory_depends_on": "eval: doc.is_group == 0",
    "options": "Property"
   },
   {
@@ -124,7 +134,7 @@
   {
    "fieldname": "common_bathroom",
    "fieldtype": "Int",
-   "label": "Common bathroom"
+   "label": "Bathroom"
   },
   {
    "bold": 1,
@@ -137,7 +147,7 @@
   {
    "fieldname": "builtup_area",
    "fieldtype": "Float",
-   "label": "Builtup area (m\u00b2 )",
+   "label": "Builtup area (m\u00b2)",
    "precision": "0"
   },
   {
@@ -164,13 +174,28 @@
    "label": "Smoking"
   },
   {
+   "depends_on": "eval: doc.is_group == 0",
+   "fieldname": "payment_type",
+   "fieldtype": "Select",
+   "label": "Payment Type",
+   "options": "Cash\nInstallments\nCash or Installments"
+  },
+  {
+   "default": "Available",
+   "depends_on": "eval: doc.is_group == 0",
+   "fieldname": "for_cancellation",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "For Cancellation",
+   "options": "Available\nOn Sale\nOn Lease\nReserved\nOff lease in 3 months\nLeased\nSold\nRemoved"
+  },
+  {
    "bold": 1,
    "collapsible": 1,
    "depends_on": "eval: doc.is_group == 0",
    "fieldname": "section_break_22",
    "fieldtype": "Section Break",
-   "label": "MORE INFORMATION",
-   "mandatory_depends_on": "eval: doc.is_group == 0"
+   "label": "MORE INFORMATION"
   },
   {
    "fieldname": "unit_assets",
@@ -258,6 +283,14 @@
    "options": "Fully Furnished\nSemi Furnished\nUnfurnished"
   },
   {
+   "depends_on": "eval:doc.status === \"On Lease\"",
+   "fieldname": "price_per_month_day",
+   "fieldtype": "Int",
+   "label": "Price per month/day",
+   "mandatory_depends_on": "eval:doc.status === \"On Lease\""
+  },
+  {
+   "depends_on": "eval:doc.status === \"On Sale\"",
    "fieldname": "price_per_meter",
    "fieldtype": "Currency",
    "label": "Price per meter",
@@ -271,11 +304,12 @@
    "options": "Project Category"
   },
   {
-   "fieldname": "nymber_of_rooms",
+   "fieldname": "number_of_rooms",
    "fieldtype": "Int",
    "label": "Number Of Rooms"
   },
   {
+   "fetch_from": "parent_property.project_city",
    "fieldname": "city",
    "fieldtype": "Data",
    "in_filter": 1,
@@ -284,11 +318,16 @@
    "label": "City"
   },
   {
+   "fetch_from": "parent_property.project_district",
    "fieldname": "district",
    "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "District"
   },
   {
+   "fetch_from": "parent_property.company",
    "fieldname": "developer",
    "fieldtype": "Data",
    "label": "Developer"
@@ -311,6 +350,7 @@
   {
    "fieldname": "total_price",
    "fieldtype": "Currency",
+   "hidden": 1,
    "label": "Total Price",
    "precision": "0"
   },
@@ -356,7 +396,7 @@
   {
    "depends_on": "eval: doc.is_group == 1",
    "fieldname": "floors",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "Floors"
   },
   {
@@ -367,12 +407,6 @@
    "fieldname": "land_area_m",
    "fieldtype": "Data",
    "label": "Land Area (m)"
-  },
-  {
-   "fieldname": "unit_owner",
-   "fieldtype": "Link",
-   "label": "Unit Owner",
-   "options": "Customer"
   },
   {
    "columns": 2,
@@ -392,13 +426,47 @@
    "fieldtype": "Currency",
    "label": "Unit Price",
    "precision": "0"
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval: doc.is_group == 1",
+   "fieldname": "project_details_section",
+   "fieldtype": "Section Break",
+   "label": "Project Details"
+  },
+  {
+   "fieldname": "project_builtup_area",
+   "fieldtype": "Int",
+   "label": "Project Builtup Area"
+  },
+  {
+   "fieldname": "land_area",
+   "fieldtype": "Int",
+   "label": "Land Area"
+  },
+  {
+   "fieldname": "project_city",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project City"
+  },
+  {
+   "fieldname": "project_district",
+   "fieldtype": "Data",
+   "label": "Project District"
+  },
+  {
+   "fieldname": "column_break_lplk",
+   "fieldtype": "Column Break"
   }
  ],
  "icon": "octicon octicon-home",
  "image_field": "photo",
  "is_tree": 1,
  "links": [],
- "modified": "2025-01-11 08:58:54.905637",
+ "modified": "2025-01-11 10:27:17.633545",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Property",

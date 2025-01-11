@@ -6,6 +6,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "_section",
   "project"
  ],
  "fields": [
@@ -17,12 +18,17 @@
    "link_filters": "[[\"Property\",\"is_group\",\"=\",1]]",
    "options": "Property",
    "reqd": 1
+  },
+  {
+   "fieldname": "_section",
+   "fieldtype": "Section Break",
+   "label": " "
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-01-08 14:13:04.755750",
+ "modified": "2025-01-11 09:00:55.308365",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Property Multiselect",
