@@ -15,7 +15,6 @@
   "parent_property",
   "category",
   "floors",
-  "number_of_units",
   "column_break_2",
   "photo",
   "company",
@@ -130,6 +129,7 @@
   {
    "bold": 1,
    "collapsible": 1,
+   "depends_on": "eval: doc.is_group == 0",
    "fieldname": "section_break_13",
    "fieldtype": "Section Break",
    "label": "UNIT DETAILS"
@@ -138,7 +138,7 @@
    "fieldname": "builtup_area",
    "fieldtype": "Float",
    "label": "Builtup area (m\u00b2 )",
-   "precision": "2"
+   "precision": "0"
   },
   {
    "fieldname": "facing",
@@ -169,7 +169,8 @@
    "depends_on": "eval: doc.is_group == 0",
    "fieldname": "section_break_22",
    "fieldtype": "Section Break",
-   "label": "MORE INFORMATION"
+   "label": "MORE INFORMATION",
+   "mandatory_depends_on": "eval: doc.is_group == 0"
   },
   {
    "fieldname": "unit_assets",
@@ -188,7 +189,6 @@
    "options": "Property Amenity"
   },
   {
-   "depends_on": "eval: doc.is_group == 0",
    "fieldname": "description_section",
    "fieldtype": "Section Break"
   },
@@ -258,7 +258,6 @@
    "options": "Fully Furnished\nSemi Furnished\nUnfurnished"
   },
   {
-   "depends_on": "eval:doc.is_group == 0",
    "fieldname": "price_per_meter",
    "fieldtype": "Currency",
    "label": "Price per meter",
@@ -300,19 +299,16 @@
    "label": "Building Number"
   },
   {
-   "depends_on": "eval: doc.is_group == 0",
    "fieldname": "floor_number",
    "fieldtype": "Data",
    "label": "Floor Number"
   },
   {
-   "depends_on": "eval: doc.is_group == 0",
    "fieldname": "unit_number",
    "fieldtype": "Data",
    "label": "Unit Number"
   },
   {
-   "depends_on": "eval: doc.is_group == 0",
    "fieldname": "total_price",
    "fieldtype": "Currency",
    "label": "Total Price",
@@ -332,7 +328,8 @@
    "depends_on": "eval: doc.is_group == 0",
    "fieldname": "storage_area",
    "fieldtype": "Float",
-   "label": "Storage area"
+   "label": "Storage area",
+   "precision": "0"
   },
   {
    "fieldname": "latitude",
@@ -363,12 +360,6 @@
    "label": "Floors"
   },
   {
-   "depends_on": "eval: doc.is_group == 1",
-   "fieldname": "number_of_units",
-   "fieldtype": "Int",
-   "label": "Number Of Units"
-  },
-  {
    "fieldname": "column_break_jrka",
    "fieldtype": "Column Break"
   },
@@ -385,7 +376,6 @@
   },
   {
    "columns": 2,
-   "depends_on": "eval: doc.is_group == 1",
    "fieldname": "table_zcpl",
    "fieldtype": "Table",
    "label": "Facilities",
@@ -398,7 +388,6 @@
    "precision": "0"
   },
   {
-   "depends_on": "eval:doc.is_group == 0",
    "fieldname": "unit_price",
    "fieldtype": "Currency",
    "label": "Unit Price",
@@ -409,7 +398,7 @@
  "image_field": "photo",
  "is_tree": 1,
  "links": [],
- "modified": "2025-01-09 03:06:01.691945",
+ "modified": "2025-01-11 08:58:54.905637",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Property",
