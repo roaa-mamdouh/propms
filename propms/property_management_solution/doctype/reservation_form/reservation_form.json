@@ -62,6 +62,7 @@
    "fieldname": "property_name",
    "fieldtype": "Link",
    "label": "Property name",
+   "link_filters": "[[\"Property\",\"status\",\"=\",\"Available\"]]",
    "options": "Property"
   },
   {
@@ -266,7 +267,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-09 03:08:54.651899",
+ "modified": "2025-01-14 19:28:49.435971",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Reservation form",
