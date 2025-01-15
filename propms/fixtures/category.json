@@ -1,65 +1,65 @@
 [
  {
-  "category": "Administrative ",
+  "category": "Other",
   "docstatus": 0,
   "doctype": "Category",
-  "modified": "2024-12-01 12:29:39.357694",
-  "name": "gujv6kmbdl"
- },
- {
-  "category": "Medical",
-  "docstatus": 0,
-  "doctype": "Category",
-  "modified": "2024-12-01 12:29:54.009540",
-  "name": "4t78qhbvl3"
- },
- {
-  "category": "Vacation",
-  "docstatus": 0,
-  "doctype": "Category",
-  "modified": "2024-12-01 12:30:04.269005",
-  "name": "jner7luoml"
- },
- {
-  "category": "Hotel",
-  "docstatus": 0,
-  "doctype": "Category",
-  "modified": "2024-12-01 12:30:13.943569",
-  "name": "35p427tk5i"
- },
- {
-  "category": "Industrial",
-  "docstatus": 0,
-  "doctype": "Category",
-  "modified": "2024-12-01 12:30:28.929850",
-  "name": "79rjg82kiq"
+  "modified": "2025-01-11 14:52:28.433200",
+  "name": "Other"
  },
  {
   "category": "Coastal",
   "docstatus": 0,
   "doctype": "Category",
-  "modified": "2024-12-01 12:30:38.989178",
-  "name": "c0vblqemmk"
+  "modified": "2025-01-11 14:52:28.465623",
+  "name": "Coastal"
  },
  {
-  "category": "Other",
+  "category": "Hotel",
   "docstatus": 0,
   "doctype": "Category",
-  "modified": "2024-12-01 12:30:47.394601",
-  "name": "n7093retst"
+  "modified": "2025-01-11 14:52:28.481302",
+  "name": "Hotel"
+ },
+ {
+  "category": "Vacation",
+  "docstatus": 0,
+  "doctype": "Category",
+  "modified": "2025-01-11 14:52:28.488936",
+  "name": "Vacation"
+ },
+ {
+  "category": "Medical",
+  "docstatus": 0,
+  "doctype": "Category",
+  "modified": "2025-01-11 14:52:28.496575",
+  "name": "Medical"
+ },
+ {
+  "category": "Administrative",
+  "docstatus": 0,
+  "doctype": "Category",
+  "modified": "2025-01-11 14:52:28.504280",
+  "name": "Administrative"
+ },
+ {
+  "category": "Industrial",
+  "docstatus": 0,
+  "doctype": "Category",
+  "modified": "2025-01-11 14:52:28.473332",
+  "name": "Industrial"
  },
  {
   "category": "Commercial",
   "docstatus": 0,
   "doctype": "Category",
-  "modified": "2024-12-01 12:27:48.924259",
-  "name": "eu7sp3v9kb"
+  "modified": "2025-01-11 14:52:28.519946",
+  "name": "Commercial"
  },
  {
   "category": "Residential",
   "docstatus": 0,
   "doctype": "Category",
-  "modified": "2024-12-01 12:28:29.037553",
-  "name": "s9kppvabjp"
+  "modified": "2025-01-11 14:52:28.511843",
+  "name": "Residential"
  }
 ]
