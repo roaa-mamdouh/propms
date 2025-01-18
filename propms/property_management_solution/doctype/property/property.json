@@ -17,6 +17,7 @@
   "floors",
   "column_break_2",
   "photo",
+  "developer",
   "company",
   "cost_center",
   "table_zcpl",
@@ -42,7 +43,6 @@
   "district",
   "facing",
   "no_of_parking",
-  "developer",
   "building_number",
   "unit_number",
   "floor_number",
@@ -232,9 +232,9 @@
   {
    "fieldname": "company",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Company",
-   "options": "Company",
-   "reqd": 1
+   "options": "Company"
   },
   {
    "fieldname": "lft",
@@ -329,8 +329,10 @@
   {
    "fetch_from": "parent_property.company",
    "fieldname": "developer",
-   "fieldtype": "Data",
-   "label": "Developer"
+   "fieldtype": "Link",
+   "label": "Developer",
+   "options": "Developer",
+   "reqd": 1
   },
   {
    "fieldname": "building_number",
@@ -350,7 +352,6 @@
   {
    "fieldname": "total_price",
    "fieldtype": "Currency",
-   "hidden": 1,
    "label": "Total Price",
    "precision": "0"
   },
@@ -466,7 +467,7 @@
  "image_field": "photo",
  "is_tree": 1,
  "links": [],
- "modified": "2025-01-11 10:27:17.633545",
+ "modified": "2025-01-18 20:53:49.148691",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Property",

@@ -8,6 +8,7 @@
  "field_order": [
   "section_break_zoqd",
   "reservation_form",
+  "agent",
   "amended_from",
   "property_name",
   "model_no",
@@ -261,12 +262,20 @@
    "fieldname": "unit_number",
    "fieldtype": "Data",
    "label": "Unit number"
+  },
+  {
+   "default": "User",
+   "fieldname": "agent",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Agent",
+   "options": "User"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-09 03:08:54.651899",
+ "modified": "2025-01-18 20:52:22.240445",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Reservation form",

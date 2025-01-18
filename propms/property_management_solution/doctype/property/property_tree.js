@@ -2,11 +2,10 @@ frappe.treeview_settings["Property"] = {
 	add_tree_node: "propms.property_management_solution.doctype.property.property.add_node",
 	filters: [
 		{
-			fieldname: "company",
+			fieldname: "developer",
 			fieldtype:"Link",
-			options: "Company",
-			label: __("Company"),
-			default: frappe.user_defaults.company,
+			options: "Developer",
+			label: __("Developer"),
 		},
 	],
 	root_label: __("All Property"),

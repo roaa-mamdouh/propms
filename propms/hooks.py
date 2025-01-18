@@ -184,12 +184,6 @@ fixtures = [
 ]
 
 
-
-
-
-
-
-
 doc_events = {
     "Issue": {
         "validate": [
@@ -253,8 +247,6 @@ fixtures = [
              "module", "=", "Property Management Solution"
          ]
  ]},
-    {"dt": "Facilities"},
-    {"dt": "Category"},
     {"dt": "Workflow"},
     {"dt": "Workflow State"},
     {"dt": "Workflow Action"},

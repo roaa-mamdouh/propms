@@ -7,15 +7,18 @@
  "engine": "InnoDB",
  "field_order": [
   "property",
+  "reservation_form",
   "final_price",
   "commission",
   "seller_commission",
+  "crm_lead",
   "sales_person",
-  "reservation_form",
   "notes"
  ],
  "fields": [
   {
+   "fetch_from": "reservation_form.total_price",
+   "fetch_if_empty": 1,
    "fieldname": "final_price",
    "fieldtype": "Int",
    "in_list_view": 1,
@@ -32,11 +35,12 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Property",
-   "link_filters": "[[\"Property\",\"is_group\",\"=\",0]]",
+   "link_filters": "[[\"Property\",\"is_group\",\"=\",0],[\"Property\",\"status\",\"in\",[\"Available\",\"On Lease\",\"On Sale\",null]]]",
    "options": "Property",
    "reqd": 1
   },
   {
+   "fetch_from": "reservation_form.agent",
    "fieldname": "sales_person",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -62,11 +66,19 @@
    "fieldname": "notes",
    "fieldtype": "Long Text",
    "label": "Notes"
+  },
+  {
+   "fetch_from": "reservation_form.client_name",
+   "fieldname": "crm_lead",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "CRM Lead",
+   "options": "CRM Lead"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-01 11:36:14.429803",
+ "modified": "2025-01-18 21:04:44.401858",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Deal Is Done",

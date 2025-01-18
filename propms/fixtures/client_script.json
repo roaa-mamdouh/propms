@@ -3,6 +3,17 @@
   "docstatus": 0,
   "doctype": "Client Script",
   "dt": "Property",
+  "enabled": 1,
+  "modified": "2025-01-08 14:04:27.008981",
+  "module": "Property Management Solution",
+  "name": "On Sale price",
+  "script": "frappe.ui.form.on('Property', {\n    after_insert: function(frm) {\n        if (frm.doc.status === \"On Sale\" && frm.doc.price_per_meter) {\n            const total_price = frm.doc.price_per_meter * frm.doc.builtup_area;\n            \n            frappe.call({\n                method: \"frappe.client.set_value\",\n                args: {\n                    doctype: \"Property\",\n                    name: frm.doc.name,\n                    fieldname: \"total_price\",\n                    value: total_price\n                },\n                callback: function(response) {\n                    if (response.message) {\n                        frappe.msgprint({\n                            title: __('Success'),\n                            message: __('Total price has been updated to: ') + total_price,\n                            indicator: 'green'\n                        });\n                        frm.reload_doc(); // Reload the form to reflect changes\n                    }\n                }\n            });\n        }\n    }\n});",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Property",
   "enabled": 0,
   "modified": "2025-01-03 23:43:46.472089",
   "module": "Property Management Solution",
@@ -96,6 +107,17 @@
   "module": "Property Management Solution",
   "name": "Calculate Total Price",
   "script": "frappe.ui.form.on('Property', {\n    refresh: function(frm) {\n        console.log(\"Form refreshed\");\n        calculate_total_price(frm); // Call the main calculation function\n    },\n    table_zcpl_add: function(frm, cdt, cdn) {\n        console.log(\"Row added\");\n        calculate_total_price(frm);\n    },\n    table_zcpl_remove: function(frm, cdt, cdn) {\n        console.log(\"Row removed\");\n        calculate_total_price(frm);\n    },\n    builtup_area: function(frm) { // Add triggers for area and price per meter\n        calculate_total_price(frm);\n    },\n    price_per_meter: function(frm) {\n        calculate_total_price(frm);\n    },\n    unit_price: function(frm) {\n        calculate_total_price(frm);\n    }\n});\n\nfrappe.ui.form.on('Project Facility', {\n    facility: function(frm, cdt, cdn) {\n        console.log(\"Facility changed\");\n        calculate_total_price(frm);\n    },\n    facility_price: function(frm, cdt, cdn) {\n        console.log(\"Price changed\");\n        calculate_total_price(frm);\n    }\n});\n\nfunction calculate_total_price(frm) {\n    let total_facilities_price = 0;\n    let base_price = 0;\n    let total_price = 0;\n\n    console.log(\"Calculating total...\");\n\n    // Calculate total facilities price (same as before)\n    if (frm.doc.table_zcpl && frm.doc.table_zcpl.length) {\n        frm.doc.table_zcpl.forEach(function(row) {\n            total_facilities_price += flt(row.facility_price) || 0;\n        });\n    }\n\n    console.log(\"Total Facilities Price:\", total_facilities_price);\n    frm.set_value('total_facilities_price', total_facilities_price);\n    frm.refresh_field('total_facilities_price');\n\n    // Calculate base price (built-up area * price per meter)\n    let built_up_area = flt(frm.doc.builtup_area) || 0;\n    let price_per_meter = flt(frm.doc.price_per_meter) || 0;\n\n    base_price = built_up_area * price_per_meter;\n\n    console.log(\"Built-up Area:\", built_up_area);\n    console.log(\"Price per Meter:\", price_per_meter);\n    console.log(\"Base Price:\", base_price);\n\n    // Calculate final total price\n    total_price = base_price + total_facilities_price;\n\n    console.log(\"Final Total Price:\", total_price);\n    frm.set_value('unit_price',base_price); // Set the value of the new field\n    frm.set_value('total_price', total_price); // Set the value of the new field\n\n    frm.refresh_field('total_price'); // Refresh the new field\n}",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Reservation form",
+  "enabled": 1,
+  "modified": "2025-01-18 20:27:42.262713",
+  "module": "Property Management Solution",
+  "name": "Reservation form logic",
+  "script": "frappe.ui.form.on('Reservation form', {\n    refresh: function (frm) {\n        // Log debug information\n        \n        console.log(\"Before Submit Triggered\");\n        // Skip if no property name\n        if (!frm.doc.property_name) return;\n        let newStatus;\n        let isProcessing = false;  // Flag to prevent multiple calls\n\n        // Determine the new status based on form status\n        if (frm.doc.status === \"Approved\") {\n            newStatus = \"Reserved\";\n        } else if (frm.doc.status === \"Cancel\" || frm.doc.status === \"Rejected\") {\n            newStatus = \"Available\";\n        } else {\n            return;  // Exit if status doesn't match any conditions\n        }\n\n        // Prevent multiple simultaneous calls\n        if (isProcessing) return;\n\n        isProcessing = true;\n        frappe.call({\n            method: \"propms.property_management_solution.doctype.reservation_form.reservation_form.update_property_status\",\n            args: {\n                property_name: frm.doc.property_name,\n                status: newStatus,\n            },\n            callback: function (response) {\n                isProcessing = false;  // Reset processing flag\n\n                // Log success or error without showing alerts\n                if (response.message === \"success\") {\n                    console.log(`The property has been marked as ${newStatus}.`);\n                    frm._status_updated = true;\n\n                } else if (response.message === \"already_reserved\" || response.message === \"already_available\") {\n                    console.log(`The property is already ${newStatus.toLowerCase()}.`);\n                } else {\n                    console.log(\"An error occurred while updating the property status.\");\n                }\n            },\n            error: function (err) {\n                isProcessing = false;  // Reset processing flag\n                console.log(\"Server error occurred while updating the property status.\");\n            }\n        });\n    }\n});\n\n",
   "view": "Form"
  }
 ]
