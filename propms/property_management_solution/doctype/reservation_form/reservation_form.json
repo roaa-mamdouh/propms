@@ -63,6 +63,7 @@
    "fieldname": "property_name",
    "fieldtype": "Link",
    "label": "Property name",
+   "link_filters": "[[\"Property\",\"status\",\"=\",\"Available\"]]",
    "options": "Property"
   },
   {

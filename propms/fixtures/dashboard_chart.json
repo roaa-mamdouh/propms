@@ -164,7 +164,7 @@
   "heatmap_year": null,
   "is_public": 1,
   "is_standard": 0,
-  "last_synced_on": "2025-01-08 22:34:29.616682",
+  "last_synced_on": "2025-01-12 23:38:34.157339",
   "modified": "2024-12-05 14:02:42.919794",
   "module": "Property Management Solution",
   "name": "Reservations",
@@ -201,7 +201,11 @@
   "heatmap_year": null,
   "is_public": 1,
   "is_standard": 0,
+<<<<<<< HEAD
   "last_synced_on": "2025-01-18 21:17:56.386079",
+=======
+  "last_synced_on": "2025-01-15 16:07:36.565644",
+>>>>>>> 3d8e0cac505629a1ab6c9ac1329df79afbe49923
   "modified": "2024-12-16 15:53:01.138872",
   "module": "Property Management Solution",
   "name": "Reservations 2",
@@ -245,7 +249,7 @@
   "heatmap_year": null,
   "is_public": 1,
   "is_standard": 0,
-  "last_synced_on": "2025-01-08 22:34:29.592246",
+  "last_synced_on": "2025-01-12 23:38:34.151799",
   "modified": "2024-12-05 14:02:31.479217",
   "module": "Property Management Solution",
   "name": "Reservations Donut",
