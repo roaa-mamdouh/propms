@@ -29,6 +29,8 @@
   "national_id",
   "social_status",
   "job_or_profession",
+  "attach_national_id",
+  "sales_person",
   "reservation_details_section",
   "price_per_meter",
   "unit_price",
@@ -63,7 +65,7 @@
    "fieldname": "property_name",
    "fieldtype": "Link",
    "label": "Property name",
-   "link_filters": "[[\"Property\",\"status\",\"not in\",[\"Sold\",\"Leased\",\"Removed\",null]],[\"Property\",\"is_group\",\"=\",0]]",
+   "link_filters": "[[\"Property\",\"status\",\"not in\",[\"Sold\",\"Leased\",\"Removed\",\"Reserved\",null]],[\"Property\",\"is_group\",\"=\",0]]",
    "options": "Property"
   },
   {
@@ -247,7 +249,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Waiting for Approval\nDraft\nApproved\nRejected",
+   "options": "Waiting for Approval\nDraft\nApproved\nRejected\nCanceled",
    "read_only": 1
   },
   {
@@ -263,12 +265,25 @@
    "hidden": 1,
    "label": "Agent",
    "options": "User"
+  },
+  {
+   "fieldname": "attach_national_id",
+   "fieldtype": "Attach Image",
+   "label": "Attach National ID",
+   "reqd": 1
+  },
+  {
+   "default": "User",
+   "fieldname": "sales_person",
+   "fieldtype": "Link",
+   "label": "Sales Person",
+   "options": "User"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-21 14:35:50.500864",
+ "modified": "2025-01-21 15:31:29.041530",
  "modified_by": "Administrator",
  "module": "Property Management Solution",
  "name": "Reservation form",
